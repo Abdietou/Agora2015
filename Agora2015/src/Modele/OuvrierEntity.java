@@ -1,5 +1,7 @@
 package Modele;
 
+import java.util.List;
+
 public class OuvrierEntity {
 	
 	private String ID;
@@ -10,7 +12,9 @@ public class OuvrierEntity {
 	private Integer Note ;
 	private boolean Active ;
 	private DisponibiliteEntity disponibilite;
-	private PrestationEntity prestation;
-	private PrixEntity prix;
+	List <PrestationEntity> prestation;
+	List<PrixEntity> prix;
+	
+	
 
 }
