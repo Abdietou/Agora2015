@@ -1,9 +1,9 @@
 package Modele;
 
-public abstract class UtilisateursSystemeEntity {
+public class UtilisateursSystemeEntity {
 	
-	private String Login;
-	private String Password;
+	String Login;
+	String Password = null;
 	
 	public UtilisateursSystemeEntity() {
 		super();

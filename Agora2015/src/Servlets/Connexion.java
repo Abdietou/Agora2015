@@ -10,11 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import DAO_Entite.Connexion;
+
 import DAO_Entity.ConnexionBD;
 import DAO_Entity.DAO_Utilisateur;
 import Exceptions.ConnexionException;
-import Modele.Utilisateurs.Utilisateur;
 import Modele.UtilisateursSystemeEntity;
 
 /**
@@ -72,13 +71,13 @@ public class Connexion extends HttpServlet {
 			}
 			else
 			{  	error_ID="ok";
-			  UtilisateursSystemeEntity user=new UtilisateursSystemeEntity();
+			
+			  UtilisateursSystemeEntity user = new UtilisateursSystemeEntity();				
 				
-				
-				    user.SetIdentifiant(login);
-					user.mot_passe(mdp);
-					request.setAttribute( "mauvais_id", mauvais_id );
-					  request.setAttribute( "user", user );
+				    user.setLogin(login);
+					user.setPassword(mdp);
+					request.setAttribute( "mauvais_id", error_ID );
+					request.setAttribute( "user", user );
 			//this.getServletContext().getRequestDispatcher( "/Connection.jsp" ).forward( request, response );
 					request.getRequestDispatcher("/Connection.jsp").forward(request, response);
 				//this.getServletContext().getRequestDispatcher( "/Identifiant_utlisateur.jsp" ).forward( request, response );
