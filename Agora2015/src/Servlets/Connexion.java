@@ -60,14 +60,19 @@ public class Connexion extends HttpServlet {
 	    	  System.out.println(userDao.conection( con,login,mdp));
 			if(userDao.conection( con,login,mdp).equals("1"))
 			{
-				
-			
-				this.getServletContext().getRequestDispatcher( "/page_employe.jsp" ).forward( request, response );
+				this.getServletContext().getRequestDispatcher( "/page_agent_admin.jsp" ).forward( request, response );
 			}
 			else if(userDao.conection( con,login,mdp).equals("2"))
 			{
-				
-				this.getServletContext().getRequestDispatcher( "/page_direction_des_moyens.jsp" ).forward( request, response );
+				this.getServletContext().getRequestDispatcher( "/page_service_technique.jsp" ).forward( request, response );
+			}
+			else if(userDao.conection( con,login,mdp).equals("3"))
+			{
+				this.getServletContext().getRequestDispatcher( "/page_service_comptable.jsp" ).forward( request, response );
+			}
+			else if(userDao.conection( con,login,mdp).equals("4"))
+			{
+				this.getServletContext().getRequestDispatcher( "/page_service_marketing.jsp" ).forward( request, response );
 			}
 			else
 			{  	error_ID="ok";

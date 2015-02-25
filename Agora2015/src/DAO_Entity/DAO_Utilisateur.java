@@ -19,7 +19,7 @@ public class DAO_Utilisateur {
 	 * @throws SQLException
 	 */
 	
-	public String conection(Connection con,String num,String motpass)
+	public String conection(Connection con,String login,String motpass)
 			throws SQLException {
 		
 		
@@ -31,7 +31,7 @@ public class DAO_Utilisateur {
 		 String var1=null;
 		//Si employé est dans la base de données
 		String sql = "SELECT  utilisateur.type_utilisateur  FROM utilisateur WHERE"
-				+ " 	id_utilisateur = ?AND mot_depasse =? "  ;
+				+ " 	login = ?AND mot_depasse =? "  ;
 	     try {
 	    	 /*Statement stmt = con.createStatement();
 	    	
@@ -41,9 +41,8 @@ public class DAO_Utilisateur {
 	    	 
 			
 	    	 
-	    	 state.setString(1,num );
+	    	 state.setString(1,login );
 	    	 state.setString(2,motpass);
-	    	 //state.setString(3,prenom);
 	    	 
 	    	  resultat=state.executeQuery();
 	    	 } catch (SQLException e) { 	
@@ -53,22 +52,32 @@ public class DAO_Utilisateur {
 	     if(resultat.next())
 	     { 
 	    	 String type_u=resultat.getString(resultat.findColumn("type_utilisateur"));
-	    	 if(type_u.equals("employe"))
+	    	 if(type_u.equals("agent_admin"))
 	    	 {
 	    		 var1="1";
 	    	 }
-	    	 else if(type_u.equals("direction_moyens"))
+	    	 else if(type_u.equals("service_technique"))
 	    	 		
 	    	 {
 	    		 var1="2";
 	    	 }
 	    	 
-	     
+	    	 else if(type_u.equals("service_comptable"))
+	    	 		
+	    	 {
+	    		 var1="3";
+	    	 }
+	    	 
+	    	 else if(type_u.equals("service_marketing"))
+	    	 		
+	    	 {
+	    		 var1="4";
+	    	 }
 	  
 	    }
 	     else
 	     {
-	    	 var1="3";
+	    	 var1="5";
 	    	 System.out.println("objet non trouvéE");
 	    	//return false;
 	     }
