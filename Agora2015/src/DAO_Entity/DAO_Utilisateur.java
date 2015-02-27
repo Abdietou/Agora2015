@@ -30,8 +30,8 @@ public class DAO_Utilisateur {
 		 Boolean var=null;
 		 String var1=null;
 		//Si employé est dans la base de données
-		String sql = "SELECT  utilisateur.type_utilisateur  FROM utilisateur WHERE"
-				+ " 	login = ?AND mot_depasse =? "  ;
+		String sql = "SELECT  * FROM utilisateur_systeme WHERE"
+				+ " 	login = ?AND password =? "  ;
 	     try {
 	    	 /*Statement stmt = con.createStatement();
 	    	

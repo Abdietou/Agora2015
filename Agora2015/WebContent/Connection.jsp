@@ -7,7 +7,7 @@
 <form method="Get" action="con">
 <script src="bgMax.min.js" type="text/javascript"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Page d'acceuil</title>
 </head>
 <body>
 
@@ -56,11 +56,11 @@
 
 <tr>
 <td><h6>Login:&nbsp </h6></td>
-<td><h6><input type="text" name="numemp" id="login" value=""></h6></td>
+<td><h6><input type="text" name="login" id="login" value=""></h6></td>
 </tr>
 <tr>
 <td><h6>Mot de passe: &nbsp </h6></td>
-<td><h6><input type="text" name="pass" id="mdp" value=""></h6></td>
+<td><h6><input type="text" name="mdp" id="mdp" value=""></h6></td>
 </tr>
 
 <tr>
