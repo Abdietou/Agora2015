@@ -36,7 +36,7 @@ public class Connexion extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		String login = request.getParameter( "login" );
-		String mdp = request.getParameter( "mdp" );
+		String password = request.getParameter( "password" );
 		
 		DAO_Utilisateur userDao = new DAO_Utilisateur();
 		Connection con = null;
@@ -57,20 +57,20 @@ public class Connexion extends HttpServlet {
 		}
 		
 		try {
-	    	  System.out.println(userDao.conection( con,login,mdp));
-			if(userDao.conection( con,login,mdp).equals("1"))
+	    	  System.out.println(userDao.conection( con,login,password));
+			if(userDao.conection( con,login,password).equals("1"))
 			{
 				this.getServletContext().getRequestDispatcher( "/page_agent_admin.jsp" ).forward( request, response );
 			}
-			else if(userDao.conection( con,login,mdp).equals("2"))
+			else if(userDao.conection( con,login,password).equals("2"))
 			{
 				this.getServletContext().getRequestDispatcher( "/page_service_technique.jsp" ).forward( request, response );
 			}
-			else if(userDao.conection( con,login,mdp).equals("3"))
+			else if(userDao.conection( con,login,password).equals("3"))
 			{
 				this.getServletContext().getRequestDispatcher( "/page_service_comptable.jsp" ).forward( request, response );
 			}
-			else if(userDao.conection( con,login,mdp).equals("4"))
+			else if(userDao.conection( con,login,password).equals("4"))
 			{
 				this.getServletContext().getRequestDispatcher( "/page_service_marketing.jsp" ).forward( request, response );
 			}
@@ -79,12 +79,12 @@ public class Connexion extends HttpServlet {
 			
 			  UtilisateursSystemeEntity user = new UtilisateursSystemeEntity();				
 				
-				    user.setLogin(login);
-					user.setPassword(mdp);
+				    user.setlogin(login);
+					user.setpassword(password);
 					request.setAttribute( "mauvais_id", error_ID );
 					request.setAttribute( "user", user );
 			//this.getServletContext().getRequestDispatcher( "/Connection.jsp" ).forward( request, response );
-					request.getRequestDispatcher("/Connection.jsp").forward(request, response);
+					request.getRequestDispatcher("/Connexion.jsp").forward(request, response);
 				//this.getServletContext().getRequestDispatcher( "/Identifiant_utlisateur.jsp" ).forward( request, response );
 			}
 			

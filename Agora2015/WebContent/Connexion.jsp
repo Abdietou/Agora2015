@@ -31,7 +31,7 @@
 		                        <li>
 		                        	<a  href="pre_inscription.jsp"><img alt="" src="images/ins.jpg"> &nbsp Inscription</a></li>
 		                        <li >
-		                       	 	<a  href="Connection.jsp"><img alt="" src="images/conex.jpg"> &nbsp Se connecter</a>
+		                       	 	<a  href="Connexion.jsp"><img alt="" src="images/conex.jpg"> &nbsp Se connecter</a>
 		                        </li>
 								
 									

@@ -11,7 +11,7 @@ public class ConnexionBD {
 	/**
 	 * URL de connection
 	 */
-	private static String url = "jdbc:mysql://localhost:3306/agora";
+	private static String url = "jdbc:mysql://localhost:3306/agora"; //"jdbc:mysql://localhost:3306/agora"
 	/**
 	 * Nom du user
 	 */

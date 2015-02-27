@@ -3,7 +3,9 @@ package DAO_Entity;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +21,44 @@ public class DAO_Utilisateur {
 	 * @throws SQLException
 	 */
 	
-	public String conection(Connection con,String login,String motpass)
+	public void getObjet(Connection con, String login)
+	{
+	ResultSet resultats=null;
+	
+	String sql = "SELECT * FROM utilisateur_systeme WHERE login = "+ login ;
+     try {
+    	 Statement stmt = con.createStatement();	    	
+    	 resultats = stmt.executeQuery(sql);	    	
+    	 } 
+     catch (SQLException e) {
+    	
+    	System.out.println("Anomalie lors de l'execution de la requête");
+    	
+    	 }
+	try {
+
+		ResultSetMetaData rsmd = resultats.getMetaData();
+		int nbCols = rsmd.getColumnCount();
+
+		while (resultats.next()) {
+
+		for (int i = 2; i <= nbCols; i++)
+	
+		System.out.print(resultats.getString(i) + " ");
+			System.out.println();
+	
+		}
+	
+		resultats.close();
+	
+		} catch (SQLException e) {
+	
+		//traitement de l'exception
+	
+		}
+}
+	
+	public String conection(Connection con,String login,String password)
 			throws SQLException {
 		
 		
@@ -27,11 +66,11 @@ public class DAO_Utilisateur {
 		PreparedStatement state = null;
 		ResultSet resultat=null;
 		 //String num=null;
-		 Boolean var=null;
+		 //Boolean var=null;
 		 String var1=null;
 		//Si employé est dans la base de données
 		String sql = "SELECT  * FROM utilisateur_systeme WHERE"
-				+ " 	login = ?AND password =? "  ;
+				+ " 	login = ? AND password =? "  ;
 	     try {
 	    	 /*Statement stmt = con.createStatement();
 	    	
@@ -42,19 +81,23 @@ public class DAO_Utilisateur {
 			
 	    	 
 	    	 state.setString(1,login );
-	    	 state.setString(2,motpass);
+	    	 state.setString(2,password);
+	    	 
 	    	 
 	    	  resultat=state.executeQuery();
+	    	  
+	    	  
 	    	 } catch (SQLException e) { 	
 	    	
 	    	 }
 	     //l'employé n'est pas dans la base de données
 	     if(resultat.next())
 	     { 
-	    	 String type_u=resultat.getString(resultat.findColumn("type_utilisateur"));
-	    	 if(type_u.equals("agent_admin"))
+	    	 String type_u=resultat.getString(resultat.findColumn("login"));
+	    	 if(type_u.equals("admin"))
 	    	 {
 	    		 var1="1";
+	    		 
 	    	 }
 	    	 else if(type_u.equals("service_technique"))
 	    	 		
@@ -78,10 +121,12 @@ public class DAO_Utilisateur {
 	     else
 	     {
 	    	 var1="5";
-	    	 System.out.println("objet non trouvéE");
+	    	 System.out.println("objet non trouvé");
 	    	//return false;
+	    	 System.out.println( "valeur " + var1);
 	     }
 	     return var1;
+	    
 	}
 
 }
