@@ -4,18 +4,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Acceuil Agent Administratif</title>
+<title>Acceuil Service Technique</title>
 </head>
 <body>
 
 <div id="header">
 
-	<font size=100 face="gabriola" style="text-align:center;"> Acceuil Agent Administratif  </font>	
+	<font size=100 face="gabriola" style="text-align:center;"> Acceuil Service Technique  </font>	
 	
 
 
 </div>
-
 
 </body>
 </html>
