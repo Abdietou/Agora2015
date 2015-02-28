@@ -55,12 +55,12 @@
 <tr><center><h5>Connectez-vous pour accéder à votre compte</h5></center><br></tr>
 
 <tr>
-<td><h6>Login:&nbsp </h6></td>
+<td><h6>login:&nbsp </h6></td>
 <td><h6><input type="text" name="login" id="login" value=""></h6></td>
 </tr>
 <tr>
-<td><h6>Mot de passe: &nbsp </h6></td>
-<td><h6><input type="text" name="mdp" id="mdp" value=""></h6></td>
+<td><h6>password: &nbsp </h6></td>
+<td><h6><input type="text" name="password" id="password" value=""></h6></td>
 </tr>
 
 <tr>

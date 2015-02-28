@@ -19,7 +19,7 @@ import Modele.UtilisateursSystemeEntity;
 /**
  * Servlet implementation class connexion
  */
-@WebServlet("/connexion")
+@WebServlet("/Connexion")
 public class Connexion extends HttpServlet {
 
 	/**

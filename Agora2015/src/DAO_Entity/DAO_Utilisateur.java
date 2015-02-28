@@ -9,6 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import Modele.UtilisateursSystemeEntity;
+
 public class DAO_Utilisateur {
 	
 	private List<String> messages = new ArrayList<String>();
@@ -62,37 +64,32 @@ public class DAO_Utilisateur {
 			throws SQLException {
 		
 		
-		ResultSet resultats=null;
 		PreparedStatement state = null;
 		ResultSet resultat=null;
 		 //String num=null;
 		 //Boolean var=null;
 		 String var1=null;
 		//Si employé est dans la base de données
-		String sql = "SELECT  * FROM utilisateur_systeme WHERE"
-				+ " 	login = ? AND password =? "  ;
+		String sql = "SELECT utilisateur_systeme.login FROM utilisateur_systeme WHERE login = ? AND password = ?";
+		//UtilisateursSystemeEntity users = new UtilisateursSystemeEntity();
 	     try {
 	    	 /*Statement stmt = con.createStatement();
 	    	
 	    	 resultats = stmt.executeQuery(sql);
 		    	//System.out.println(resultats);*/
 	    	 state=con.prepareStatement(sql);
-	    	 
 			
 	    	 
 	    	 state.setString(1,login );
 	    	 state.setString(2,password);
 	    	 
-	    	 
-	    	  resultat=state.executeQuery();
+	    	 resultat=state.executeQuery();
 	    	  
-	    	  
-	    	 } catch (SQLException e) { 	
-	    	
+	    	 } catch (SQLException e) {
+	    		 
 	    	 }
 	     //l'employé n'est pas dans la base de données
-	     if(resultat.next())
-	     { 
+	     if(resultat.next()){ 
 	    	 String type_u=resultat.getString(resultat.findColumn("login"));
 	    	 if(type_u.equals("admin"))
 	    	 {
@@ -122,8 +119,6 @@ public class DAO_Utilisateur {
 	     {
 	    	 var1="5";
 	    	 System.out.println("objet non trouvé");
-	    	//return false;
-	    	 System.out.println( "valeur " + var1);
 	     }
 	     return var1;
 	    
