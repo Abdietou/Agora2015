@@ -1,6 +1,7 @@
 package Servlets;
 
 import java.io.IOException;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -9,6 +10,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import DAO_Entity.DAO_AgentAdmin;
+import DAO_Entity.DAO_Utilisateur;
 
 @WebServlet("/Traitement_demande_inscription")
 public class Traitement_demande_inscription extends HttpServlet {
@@ -27,6 +31,11 @@ public class Traitement_demande_inscription extends HttpServlet {
 		      HttpServletResponse response) throws ServletException, NullPointerException,
 		      IOException {
 		
+		DAO_AgentAdmin dao_admin = new DAO_AgentAdmin();
+		Connection con = null;
+		if (request.getParameter("action") != null){
+			
+		}
 			
 	}
 
