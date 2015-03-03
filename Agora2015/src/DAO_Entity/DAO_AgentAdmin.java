@@ -103,12 +103,15 @@ public class DAO_AgentAdmin {
 				demande_client.setMail(rs.getString("mail"));
 				demande_client.setLogin(rs.getString("login"));
 				demande_client.setPassword(rs.getString("password"));
+				
+				System.out.println("objet" + demande_client.toString() +"bd"+ rs.getLong("id_client_inscription"));
 			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return liste_demande;
+		
 	}
 
 }

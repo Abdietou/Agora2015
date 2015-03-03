@@ -66,11 +66,15 @@
 			<td><%=cl_ins.getMail() %></td>
 			<td><%=cl_ins.getLogin() %></td>
 			<td><%=cl_ins.getPassword() %></td>
+			<td>
+			<form action="agent_admin" method="post" >
+					<input type="hidden" name="id_client_inscription" value="<%=cl_ins.getId() %>" >
+				</form>
+			</td>
 			
 		</tr>
 			<% } %>
-		</table>
-		
+		</table>		
 
 </body>
 </html>

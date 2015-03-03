@@ -16,7 +16,7 @@
  </servlet>
  <servlet-mapping>
     <servlet-name>page_agent_admin</servlet-name>
-    <url-pattern>/refuser</url-pattern>
+    <url-pattern>/agent_admin</url-pattern>
   </servlet-mapping>
  
  
