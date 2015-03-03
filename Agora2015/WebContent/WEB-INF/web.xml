@@ -9,6 +9,16 @@
     <servlet-name>Connexion</servlet-name>
     <url-pattern>/con</url-pattern>
   </servlet-mapping>
+  
+ <servlet>
+     <servlet-name>page_agent_admin</servlet-name>
+     <servlet-class>Servlets.Traitement_demande_inscription</servlet-class>
+ </servlet>
+ <servlet-mapping>
+    <servlet-name>page_agent_admin</servlet-name>
+    <url-pattern>/refuser</url-pattern>
+  </servlet-mapping>
+ 
  
  <!--   <display-name>Agora2015</display-name>
   <welcome-file-list>

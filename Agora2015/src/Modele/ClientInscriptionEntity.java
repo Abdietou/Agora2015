@@ -1,8 +1,8 @@
 package Modele;
 
-public class ClientIncriptionEntity {
+public class ClientInscriptionEntity {
 	
-	private Long id;
+	private Long id_client_inscription;
 	private String nom;
 	private String prenom;
 	private String adresse;
@@ -13,11 +13,11 @@ public class ClientIncriptionEntity {
 	private String login;
 	private String password;
 	
-	public ClientIncriptionEntity(Long id, String nom, String prenom,
+	public ClientInscriptionEntity(Long id_client_inscription, String nom, String prenom,
 			String adresse, String ville, String code_postal, String telephone,
 			String mail, String login, String password) {
 		super();
-		this.id = id;
+		this.id_client_inscription = id_client_inscription;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.adresse = adresse;
@@ -29,7 +29,7 @@ public class ClientIncriptionEntity {
 		this.password = password;
 	}
 
-	public ClientIncriptionEntity(String nom, String prenom, String adresse,
+	public ClientInscriptionEntity(String nom, String prenom, String adresse,
 			String ville, String code_postal, String telephone, String mail,
 			String login, String password) {
 		super();
@@ -44,17 +44,17 @@ public class ClientIncriptionEntity {
 		this.password = password;
 	}
 
-	public ClientIncriptionEntity() {
+	public ClientInscriptionEntity() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
 	public Long getId() {
-		return id;
+		return id_client_inscription;
 	}
 
 	public void setId(Long id) {
-		this.id = id;
+		this.id_client_inscription = id_client_inscription;
 	}
 
 	public String getNom() {
@@ -131,7 +131,7 @@ public class ClientIncriptionEntity {
 
 	@Override
 	public String toString() {
-		return "ClientIncriptionEntity [id=" + id + ", nom=" + nom
+		return "ClientIncriptionEntity [id_client_inscription=" + id_client_inscription + ", nom=" + nom
 				+ ", prenom=" + prenom + ", adresse=" + adresse + ", ville="
 				+ ville + ", code_postal=" + code_postal + ", telephone="
 				+ telephone + ", mail=" + mail + ", login=" + login
@@ -156,7 +156,7 @@ public class ClientIncriptionEntity {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		ClientIncriptionEntity other = (ClientIncriptionEntity) obj;
+		ClientInscriptionEntity other = (ClientInscriptionEntity) obj;
 		if (login == null) {
 			if (other.login != null)
 				return false;
