@@ -17,11 +17,10 @@ import DAO_Entity.DAO_AgentAdmin;
 import DAO_Entity.DAO_Utilisateur;
 import Exceptions.ConnexionException;
 
-@WebServlet("/Traitement_demande_inscription")
 public class Traitement_demande_inscription extends HttpServlet {
 
 	/**
-	 * 
+	 * @see HttpServlet#HttpServlet()
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -31,11 +30,13 @@ public class Traitement_demande_inscription extends HttpServlet {
 	}
 	
 	@Override
-	protected void doGet(HttpServletRequest request,
-		      HttpServletResponse response) throws ServletException, NullPointerException,
-		      IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		Connection con = null;
 		DAO_AgentAdmin dao_admin = new DAO_AgentAdmin();
+		if(req.getParameter("action") != null){
+			
+		}
 		
 //		// Récupère les informations
 //		String id = request.getParameter("id_client_inscription");
@@ -51,10 +52,10 @@ public class Traitement_demande_inscription extends HttpServlet {
 		
 		ClientInscriptionBeans cl_inscription = new ClientInscriptionBeans();
 		cl_inscription.setListe_demande_inscription(dao_admin.getAll());
-		request.setAttribute("modele", cl_inscription);
-		request.getRequestDispatcher("page_agent_admin.jsp").forward(request, response);
+		req.setAttribute("modele", cl_inscription);
+		req.getRequestDispatcher("page_agent_admin.jsp").forward(req, resp);
 		
-//		
+		
 //		try {
 //			con = ConnexionBD.getInstance();
 //			System.out.println("conection réussie");

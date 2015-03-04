@@ -18,7 +18,7 @@ public class ClientInscriptionBeans {
 	public ArrayList<ClientInscriptionEntity> getListe_demande_inscription() {
 		return liste_demande_inscription;
 	}
-	public void setListe_demande_inscription(ArrayList liste_demande_inscription) {
+	public void setListe_demande_inscription(ArrayList<ClientInscriptionEntity> liste_demande_inscription) {
 		this.liste_demande_inscription = liste_demande_inscription;
 	}
 	

@@ -11,12 +11,12 @@
   </servlet-mapping>
   
  <servlet>
-     <servlet-name>page_agent_admin</servlet-name>
+     <servlet-name>Traitement_demande_inscription</servlet-name>
      <servlet-class>Servlets.Traitement_demande_inscription</servlet-class>
  </servlet>
  <servlet-mapping>
-    <servlet-name>page_agent_admin</servlet-name>
-    <url-pattern>/agent_admin</url-pattern>
+    <servlet-name>Traitement_demande_inscription</servlet-name>
+    <url-pattern>/admin</url-pattern>
   </servlet-mapping>
  
  

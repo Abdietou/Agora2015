@@ -105,8 +105,10 @@ public class DAO_AgentAdmin {
 				demande_client.setPassword(rs.getString("password"));
 				
 				System.out.println("objet" + demande_client.toString() +"bd"+ rs.getLong("id_client_inscription"));
+				
+				
 			}
-			
+			rs.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

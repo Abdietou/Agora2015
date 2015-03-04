@@ -53,7 +53,7 @@ public class ClientInscriptionEntity {
 		return id_client_inscription;
 	}
 
-	public void setId(Long id) {
+	public void setId(Long id_client_inscription) {
 		this.id_client_inscription = id_client_inscription;
 	}
 
@@ -136,16 +136,6 @@ public class ClientInscriptionEntity {
 				+ ville + ", code_postal=" + code_postal + ", telephone="
 				+ telephone + ", mail=" + mail + ", login=" + login
 				+ ", password=" + password + "]";
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((login == null) ? 0 : login.hashCode());
-		result = prime * result
-				+ ((password == null) ? 0 : password.hashCode());
-		return result;
 	}
 
 	@Override
