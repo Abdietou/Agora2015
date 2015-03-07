@@ -2,7 +2,6 @@ package Modele;
 
 public class ClientInscriptionEntity {
 	
-	private Long id_client_inscription;
 	private String nom;
 	private String prenom;
 	private String adresse;
@@ -13,21 +12,6 @@ public class ClientInscriptionEntity {
 	private String login;
 	private String password;
 	
-	public ClientInscriptionEntity(Long id_client_inscription, String nom, String prenom,
-			String adresse, String ville, String code_postal, String telephone,
-			String mail, String login, String password) {
-		super();
-		this.id_client_inscription = id_client_inscription;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.adresse = adresse;
-		this.ville = ville;
-		this.code_postal = code_postal;
-		this.telephone = telephone;
-		this.mail = mail;
-		this.login = login;
-		this.password = password;
-	}
 
 	public ClientInscriptionEntity(String nom, String prenom, String adresse,
 			String ville, String code_postal, String telephone, String mail,
@@ -49,13 +33,6 @@ public class ClientInscriptionEntity {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Long getId() {
-		return id_client_inscription;
-	}
-
-	public void setId(Long id_client_inscription) {
-		this.id_client_inscription = id_client_inscription;
-	}
 
 	public String getNom() {
 		return nom;
@@ -129,13 +106,14 @@ public class ClientInscriptionEntity {
 		this.password = password;
 	}
 
+
 	@Override
 	public String toString() {
-		return "ClientIncriptionEntity [id_client_inscription=" + id_client_inscription + ", nom=" + nom
-				+ ", prenom=" + prenom + ", adresse=" + adresse + ", ville="
-				+ ville + ", code_postal=" + code_postal + ", telephone="
-				+ telephone + ", mail=" + mail + ", login=" + login
-				+ ", password=" + password + "]";
+		return "ClientInscriptionEntity [nom=" + nom + ", prenom=" + prenom
+				+ ", adresse=" + adresse + ", ville=" + ville
+				+ ", code_postal=" + code_postal + ", telephone=" + telephone
+				+ ", mail=" + mail + ", login=" + login + ", password="
+				+ password + "]";
 	}
 
 	@Override

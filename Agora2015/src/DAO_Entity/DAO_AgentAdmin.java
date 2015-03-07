@@ -13,6 +13,15 @@ import Modele.ClientInscriptionEntity;
 
 public class DAO_AgentAdmin {
 	
+	/**
+	 * Recherche une instance depuis la base de données à partir de l'identifiant
+	 * 
+	 * @param con
+	 * @param id
+	 * @return l'instance
+	 * @throws SQLException
+	 */
+	
 	public ArrayList<ClientInscriptionEntity> demande_client = new ArrayList<ClientInscriptionEntity>();
 	
 	public ArrayList<ClientInscriptionEntity> getDemande_client() {
@@ -41,7 +50,6 @@ public class DAO_AgentAdmin {
 			while (resultats.next()) {
 				ClientInscriptionEntity demande_client = new ClientInscriptionEntity();
 				
-				demande_client.setId(resultats.getLong("id"));
 				demande_client.setNom(resultats.getString("nom"));
 				demande_client.setPrenom(resultats.getString("prenom"));
 				demande_client.setAdresse(resultats.getString("adresse"));
@@ -93,7 +101,6 @@ public class DAO_AgentAdmin {
 			while (rs.next()) {
 				ClientInscriptionEntity demande_client = new ClientInscriptionEntity();
 				
-				demande_client.setId(rs.getLong("id_client_inscription"));
 				demande_client.setNom(rs.getString("nom"));
 				demande_client.setPrenom(rs.getString("prenom"));
 				demande_client.setAdresse(rs.getString("adresse"));

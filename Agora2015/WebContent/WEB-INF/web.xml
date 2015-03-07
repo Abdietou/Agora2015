@@ -18,6 +18,15 @@
     <servlet-name>Traitement_demande_inscription</servlet-name>
     <url-pattern>/admin</url-pattern>
   </servlet-mapping>
+  
+ <servlet>
+     <servlet-name>InscriptionClient</servlet-name>
+     <servlet-class>Servlets.InscriptionClient</servlet-class>
+ </servlet>
+ <servlet-mapping>
+    <servlet-name>InscriptionClient</servlet-name>
+    <url-pattern>/inscription</url-pattern>
+  </servlet-mapping>
  
  
  <!--   <display-name>Agora2015</display-name>

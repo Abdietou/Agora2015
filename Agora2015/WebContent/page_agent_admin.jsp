@@ -30,8 +30,6 @@
 	
 </div>
 
-<form action="admin" method="post">
-
 <h3>Demande d'inscription des clients</h3>
 	
 	<table border="1" width="60%" >
@@ -64,6 +62,7 @@
 			<td><%=demande_client.getLogin() %></td>
 			<td><%=demande_client.getPassword() %></td>
 			<td>
+			
 				<form action="agent" method="post" >
 					<input type="hidden" name="id_client_inscription" value="<%=demande_client.getId() %>" >
 				</form>
@@ -71,7 +70,8 @@
 		
 			<% } %>
 			
-		</table>
-		</form>		
+			
+			
+		</table>	
 </body>
 </html>
