@@ -28,12 +28,11 @@
 		  						 <li class="divider">
 		  						 	<a  href="demande_devis.jsp"><img alt="" src="images/home.jpg"> &nbsp Demande Devis</a>
 		  						 </li>
-		                        <li>
-		                        	<a  href="pre_inscription.jsp"><img alt="" src="images/ins.jpg"> &nbsp Inscription</a></li>
+		                    
 		                        <li >
-		                       	 	<a  href="Connexion.jsp"><img alt="" src="images/conex.jpg"> &nbsp Se connecter</a>
+		                       	 	<a  href="inscription.jsp"><img alt="" src="images/conex.jpg"> &nbsp Faire une demande d'inscription en tant que client</a>
 		                        </li>
-								
+		                        
 									
 								
 				                        	

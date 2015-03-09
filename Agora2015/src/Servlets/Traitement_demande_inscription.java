@@ -17,6 +17,7 @@ import DAO_Entity.DAO_AgentAdmin;
 import DAO_Entity.DAO_Utilisateur;
 import Exceptions.ConnexionException;
 
+@WebServlet(name = "Traitement_demande_inscription", urlPatterns = { "/Traitement_demande_inscription" })
 public class Traitement_demande_inscription extends HttpServlet {
 
 	/**
@@ -34,9 +35,12 @@ public class Traitement_demande_inscription extends HttpServlet {
 		
 		Connection con = null;
 		DAO_AgentAdmin dao_admin = new DAO_AgentAdmin();
-		if(req.getParameter("action") != null){
-			
-		}
+		
+		ClientInscriptionBeans cl_inscription = new ClientInscriptionBeans();
+		cl_inscription.setListe_demande_inscription(dao_admin.getAll());
+		//String tableau [] = tableau;
+		req.setAttribute("tableau", cl_inscription);
+		req.getRequestDispatcher("page_agent_admin.jsp").forward(req, resp);
 		
 //		// Récupère les informations
 //		String id = request.getParameter("id_client_inscription");
@@ -49,11 +53,7 @@ public class Traitement_demande_inscription extends HttpServlet {
 //		String mail = request.getParameter("mail");
 //		String login = request.getParameter("login");
 //		String password = request.getParameter("password");
-		
-		ClientInscriptionBeans cl_inscription = new ClientInscriptionBeans();
-		cl_inscription.setListe_demande_inscription(dao_admin.getAll());
-		req.setAttribute("modele", cl_inscription);
-		req.getRequestDispatcher("page_agent_admin.jsp").forward(req, resp);
+	
 		
 		
 //		try {

@@ -111,7 +111,7 @@ public class DAO_AgentAdmin {
 				demande_client.setLogin(rs.getString("login"));
 				demande_client.setPassword(rs.getString("password"));
 				
-				System.out.println("objet" + demande_client.toString() +"bd"+ rs.getLong("id_client_inscription"));
+				System.out.println("objet" + demande_client.toString() + "/n"+ "bd"+ rs.getString("nom"));
 				
 				
 			}

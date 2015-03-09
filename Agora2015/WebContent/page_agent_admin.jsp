@@ -1,10 +1,9 @@
 <%@page import="Beans.ClientInscriptionBeans"%>
 <%@page import="Modele.ClientInscriptionEntity"%>
 <%@page import="DAO_Entity.DAO_AgentAdmin"%>
-<%@page import="java.sql.Connection"%>
 <%@page import="java.util.Iterator"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,9 +12,9 @@
 </head>
 <body>
 	 <%
-  	ClientInscriptionBeans inscription_client = (ClientInscriptionBeans) request.getAttribute("modele");
-  	if(request.getAttribute("modele") != null) {
-  		inscription_client = (ClientInscriptionBeans) request.getAttribute("modele");
+  	ClientInscriptionBeans inscription_client = (ClientInscriptionBeans) request.getAttribute("tableau");
+  	if(request.getAttribute("tableau") != null){
+  		inscription_client = (ClientInscriptionBeans) request.getAttribute("tableau");
   	} else {
   		DAO_AgentAdmin dao_admin = new DAO_AgentAdmin();
   		inscription_client = new ClientInscriptionBeans();
@@ -31,10 +30,10 @@
 </div>
 
 <h3>Demande d'inscription des clients</h3>
-	
-	<table border="1" width="60%" >
+	<form action="agent" method="post">
+	</form>
+	<table border="1" width="30%" >
 		<tr> 
-			<th>ID</th>
 			<th>Nom</th>
 			<th>Prenom</th>
 			<th>Adresse</th>
@@ -51,7 +50,7 @@
 			ClientInscriptionEntity demande_client = list.next();
 		%>
 		<tr>
-			<td><%=demande_client.getId() %></td>
+
 			<td><%=demande_client.getNom() %></td>
 			<td><%=demande_client.getPrenom() %></td>
 			<td><%=demande_client.getAdresse() %></td>
@@ -63,15 +62,18 @@
 			<td><%=demande_client.getPassword() %></td>
 			<td>
 			
-				<form action="agent" method="post" >
-					<input type="hidden" name="id_client_inscription" value="<%=demande_client.getId() %>" >
+				<form action="agent" method="post">
+					<input type="hidden" name="id" value="<%=demande_client.getMail() %>" >
+					<input type="hidden" name="action" value="Supprimer"  >
+					<input type="submit" value="Supprimer"  />
 				</form>
-		</tr>
+				</td>
+			</tr>
 		
 			<% } %>
-			
-			
-			
-		</table>	
+				
+	</table>
+	
+		
 </body>
 </html>

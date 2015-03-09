@@ -16,7 +16,7 @@
  </servlet>
  <servlet-mapping>
     <servlet-name>Traitement_demande_inscription</servlet-name>
-    <url-pattern>/admin</url-pattern>
+    <url-pattern>/agent</url-pattern>
   </servlet-mapping>
   
  <servlet>
@@ -26,6 +26,15 @@
  <servlet-mapping>
     <servlet-name>InscriptionClient</servlet-name>
     <url-pattern>/inscription</url-pattern>
+  </servlet-mapping>
+  
+ <servlet>
+     <servlet-name>Internaute</servlet-name>
+     <servlet-class>Servlets.Internaute</servlet-class>
+ </servlet>
+ <servlet-mapping>
+    <servlet-name>Internaute</servlet-name>
+    <url-pattern>/internaute</url-pattern>
   </servlet-mapping>
  
  
