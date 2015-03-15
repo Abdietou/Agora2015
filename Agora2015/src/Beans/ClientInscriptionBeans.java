@@ -6,21 +6,23 @@ import Modele.ClientInscriptionEntity;
 
 public class ClientInscriptionBeans {
 	
-	private ClientInscriptionEntity demande_inscription = new ClientInscriptionEntity();
-	private ArrayList <ClientInscriptionEntity> liste_demande_inscription = new ArrayList<ClientInscriptionEntity>();
+	private ClientInscriptionEntity client = new ClientInscriptionEntity();
+	private ArrayList <ClientInscriptionEntity> liste = new ArrayList<ClientInscriptionEntity>();
 	
-	public ClientInscriptionEntity getDemande_inscription() {
-		return demande_inscription;
+	public ClientInscriptionEntity getClient() {
+		return client;
 	}
-	public void setDemande_inscription(ClientInscriptionEntity demande_inscription) {
-		this.demande_inscription = demande_inscription;
+	public void setClient(ClientInscriptionEntity client) {
+		this.client = client;
 	}
-	public ArrayList<ClientInscriptionEntity> getListe_demande_inscription() {
-		return liste_demande_inscription;
+	public ArrayList<ClientInscriptionEntity> getListe() {
+		return liste;
 	}
-	public void setListe_demande_inscription(ArrayList<ClientInscriptionEntity> liste_demande_inscription) {
-		this.liste_demande_inscription = liste_demande_inscription;
+	public void setListe(ArrayList<ClientInscriptionEntity> liste) {
+		this.liste = liste;
 	}
+	
+	
 	
 	
 

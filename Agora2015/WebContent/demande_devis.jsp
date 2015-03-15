@@ -22,15 +22,14 @@
 <div class="hiddenQ">
 <table border="0">
 <tr>
-<td class="label">Domaine <div class="domaine">*</div></td>
+<td class="label">Domaine <div class="important">*</div></td>
 <td class="field">
-<select name="expertS" id="domaine" class="important">
-<option value=""></option>
-<option value="1">Travaux divers, rénovation, aménagement</option>
-<option value="2">Construction, agrandissement</option>
-<option value="3">Rénovation totale, tous corps d'état</option>
-<option value="4">Diagnostics du bâtiment</option>
-<option value="5">Extérieur, voirie, jardin</option>
+<select name="domaine" id="domaine" class="domaine">
+<option value="Travaux divers, rénovation, aménagement">Travaux divers, rénovation, aménagement</option>
+<option value="Construction, agrandissement">Construction, agrandissement</option>
+<option value="Rénovation totale, tous corps d'état">Rénovation totale, tous corps d'état</option>
+<option value="Diagnostics du bâtiment">Diagnostics du bâtiment</option>
+<option value="Extérieur, voirie, jardin">Extérieur, voirie, jardin</option>
 </select>
 </td>
 <td id="sousDomaine1_inf" class="warn"> </td>
@@ -52,7 +51,7 @@
                         <td class="label">Description des tâches à réaliser ( donner toutes les précisions utiles : dimensions, état ... )<div class="important">*</div></td>
                         <td class="field">
                            
-                           <textarea name="descriptrion"   rows="12" cols="45" wrap="hard" id="description"></textarea>
+                           <textarea name="description"   rows="12" cols="45" wrap="hard" id="description"></textarea>
                         </td>
                         <td id="corpsDemande_inf" class="warn"> </td>
                     </tr>
@@ -73,11 +72,11 @@
                            
                            
 								  
-                                  <select name="delai" id="delai"><option value="1">Dès que possible</option>
-<option value="2">D&#39;ici 3 mois</option>
-<option value="3">D&#39;ici 6 mois</option>
-<option value="4">Dans plus de 6 mois</option>
-<option value="5">Urgent</option></select>
+                                  <select name="delai" id="delai"><option value="Dès que possible">Dès que possible</option>
+<option value="3 mois">D&#39;ici 3 mois</option>
+<option value="6 mois">D&#39;ici 6 mois</option>
+<option value="plus de 6 mois">Dans plus de 6 mois</option>
+<option value="urgent">Urgent</option></select>
                                
                            
                         </td>

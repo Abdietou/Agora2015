@@ -31,7 +31,7 @@ public class Internaute extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String domaine = request.getParameter( "domaine" );
-		String titre = request.getParameter( "tire" );
+		String titre = request.getParameter( "titre" );
 		String description = request.getParameter( "description" );
 		String delai = request.getParameter( "delai" );
 		String budget = request.getParameter( "budget" );

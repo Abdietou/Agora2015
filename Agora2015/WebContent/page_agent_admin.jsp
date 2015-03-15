@@ -12,13 +12,13 @@
 </head>
 <body>
 	 <%
-  	ClientInscriptionBeans inscription_client = (ClientInscriptionBeans) request.getAttribute("tableau");
+  	ClientInscriptionBeans client = (ClientInscriptionBeans) request.getAttribute("tableau");
   	if(request.getAttribute("tableau") != null){
-  		inscription_client = (ClientInscriptionBeans) request.getAttribute("tableau");
+  		client = (ClientInscriptionBeans) request.getAttribute("tableau");
   	} else {
-  		DAO_AgentAdmin dao_admin = new DAO_AgentAdmin();
-  		inscription_client = new ClientInscriptionBeans();
-  		inscription_client.setListe_demande_inscription(dao_admin.getAll());
+  		DAO_AgentAdmin admin = new DAO_AgentAdmin();
+  		client = new ClientInscriptionBeans();
+  		client.setListe(admin.getAll());
   	}
   	
   	%> 
@@ -45,25 +45,25 @@
 			<th>Password</th>
 		</tr>
 		<%
-		Iterator <ClientInscriptionEntity> list = inscription_client.getListe_demande_inscription().iterator();
+		Iterator <ClientInscriptionEntity> list = client.getListe().iterator();
 		while(list.hasNext()){
-			ClientInscriptionEntity demande_client = list.next();
+			ClientInscriptionEntity cl = list.next();
 		%>
 		<tr>
 
-			<td><%=demande_client.getNom() %></td>
-			<td><%=demande_client.getPrenom() %></td>
-			<td><%=demande_client.getAdresse() %></td>
-			<td><%=demande_client.getVille() %></td>
-			<td><%=demande_client.getCode_postal() %></td>
-			<td><%=demande_client.getTelephone() %></td>
-			<td><%=demande_client.getMail() %></td>
-			<td><%=demande_client.getLogin() %></td>
-			<td><%=demande_client.getPassword() %></td>
+			<td><%=cl.getNom() %></td>
+			<td><%=cl.getPrenom() %></td>
+			<td><%=cl.getAdresse() %></td>
+			<td><%=cl.getVille() %></td>
+			<td><%=cl.getCode_postal() %></td>
+			<td><%=cl.getTelephone() %></td>
+			<td><%=cl.getMail() %></td>
+			<td><%=cl.getLogin() %></td>
+			<td><%=cl.getPassword() %></td>
 			<td>
 			
 				<form action="agent" method="post">
-					<input type="hidden" name="id" value="<%=demande_client.getMail() %>" >
+					<input type="hidden" name="id" value="<%=cl.getMail() %>" >
 					<input type="hidden" name="action" value="Supprimer"  >
 					<input type="submit" value="Supprimer"  />
 				</form>

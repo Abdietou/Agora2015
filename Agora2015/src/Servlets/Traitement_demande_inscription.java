@@ -2,8 +2,7 @@ package Servlets;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,10 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Beans.ClientInscriptionBeans;
-import DAO_Entity.ConnexionBD;
 import DAO_Entity.DAO_AgentAdmin;
-import DAO_Entity.DAO_Utilisateur;
-import Exceptions.ConnexionException;
 
 @WebServlet(name = "Traitement_demande_inscription", urlPatterns = { "/Traitement_demande_inscription" })
 public class Traitement_demande_inscription extends HttpServlet {
@@ -36,23 +32,24 @@ public class Traitement_demande_inscription extends HttpServlet {
 		Connection con = null;
 		DAO_AgentAdmin dao_admin = new DAO_AgentAdmin();
 		
+//	// Récupère les informations
+//		String nom = req.getParameter("nom");
+//		String prenom = req.getParameter("prenom");
+//		String adresse = req.getParameter("adresse");
+//		String ville = req.getParameter("ville");
+//		String code_postal = req.getParameter("code_postal");
+//		String telephone = req.getParameter("telephone");
+//		String mail = req.getParameter("mail");
+//		String login = req.getParameter("login");
+//		String password = req.getParameter("password");
+		
 		ClientInscriptionBeans cl_inscription = new ClientInscriptionBeans();
-		cl_inscription.setListe_demande_inscription(dao_admin.getAll());
+		cl_inscription.setListe(dao_admin.getAll());
 		//String tableau [] = tableau;
 		req.setAttribute("tableau", cl_inscription);
 		req.getRequestDispatcher("page_agent_admin.jsp").forward(req, resp);
 		
-//		// Récupère les informations
-//		String id = request.getParameter("id_client_inscription");
-//		String nom = request.getParameter("nom");
-//		String prenom = request.getParameter("prenom");
-//		String adresse = request.getParameter("adresse");
-//		String ville = request.getParameter("ville");
-//		String code_postal = request.getParameter("code_postal");
-//		String telephone = request.getParameter("telephone");
-//		String mail = request.getParameter("mail");
-//		String login = request.getParameter("login");
-//		String password = request.getParameter("password");
+
 	
 		
 		
