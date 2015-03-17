@@ -113,6 +113,7 @@ public class DAO_AgentAdmin {
 				
 				System.out.println("objet" + demande_client.toString() + "/n"+ "bd"+ rs.getString("nom"));
 				
+				liste_demande.add(demande_client);
 				
 			}
 			rs.close();
