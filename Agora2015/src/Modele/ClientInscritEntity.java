@@ -1,7 +1,13 @@
 package Modele;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 public class ClientInscritEntity {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String id_client_inscrit;
 	private String nom;
 	private String prenom;
@@ -12,6 +18,7 @@ public class ClientInscritEntity {
 	private String mail;
 	private String login;
 	private String password;
+	
 	
 	public ClientInscritEntity() {
 		super();

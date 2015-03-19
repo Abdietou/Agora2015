@@ -1,6 +1,18 @@
 package Modele;
 
-public class ClientInscriptionEntity {
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "CLIENT_INSCRIPTION")
+public class ClientInscriptionEntity implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	private String nom;
 	private String prenom;
