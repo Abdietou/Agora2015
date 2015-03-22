@@ -21,7 +21,7 @@
   
  <servlet>
      <servlet-name>InscriptionClient</servlet-name>
-     <servlet-class>Servlets.InscriptionClient</servlet-class>
+     <servlet-class>Servlets.ControleurInscriptionClient</servlet-class>
  </servlet>
  <servlet-mapping>
     <servlet-name>InscriptionClient</servlet-name>

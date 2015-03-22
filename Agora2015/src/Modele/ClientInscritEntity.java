@@ -8,7 +8,7 @@ public class ClientInscritEntity {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private String id_client_inscrit;
+	private Long id_client_inscrit;
 	private String nom;
 	private String prenom;
 	private String adresse;
@@ -25,7 +25,7 @@ public class ClientInscritEntity {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ClientInscritEntity(String id_client_inscrit, String nom,
+	public ClientInscritEntity(Long id_client_inscrit, String nom,
 			String prenom, String adresse, int code_postal, String ville,
 			String telephone, String mail, String login, String password) {
 		super();
@@ -56,11 +56,11 @@ public class ClientInscritEntity {
 		this.password = password;
 	}
 
-	public String getId_client_inscrit() {
+	public Long getId_client_inscrit() {
 		return id_client_inscrit;
 	}
 
-	public void setId_client_inscrit(String id_client_inscrit) {
+	public void setId_client_inscrit(Long id_client_inscrit) {
 		this.id_client_inscrit = id_client_inscrit;
 	}
 
