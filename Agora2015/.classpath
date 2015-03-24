@@ -14,19 +14,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="D:/JAR Java/mysql-connector-java-5.1.24-bin.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/elsa/Dropbox/M1 MIAGE/Projet Génie Logiciel 2015/Programmation projet/GestionProduitHibernateSybaway/WebContent/WEB-INF/lib/antlr-2.7.6rc1.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/elsa/Dropbox/M1 MIAGE/Projet Génie Logiciel 2015/Programmation projet/GestionProduitHibernateSybaway/WebContent/WEB-INF/lib/asm.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/elsa/Dropbox/M1 MIAGE/Projet Génie Logiciel 2015/Programmation projet/GestionProduitHibernateSybaway/WebContent/WEB-INF/lib/asm-attrs.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/elsa/Dropbox/M1 MIAGE/Projet Génie Logiciel 2015/Programmation projet/GestionProduitHibernateSybaway/WebContent/WEB-INF/lib/cglib-2.1.3.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/elsa/Dropbox/M1 MIAGE/Projet Génie Logiciel 2015/Programmation projet/GestionProduitHibernateSybaway/WebContent/WEB-INF/lib/commons-collections-2.1.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/elsa/Dropbox/M1 MIAGE/Projet Génie Logiciel 2015/Programmation projet/GestionProduitHibernateSybaway/WebContent/WEB-INF/lib/commons-logging-1.0.4.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/elsa/Dropbox/M1 MIAGE/Projet Génie Logiciel 2015/Programmation projet/GestionProduitHibernateSybaway/WebContent/WEB-INF/lib/dom4j-1.6.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/elsa/Dropbox/M1 MIAGE/Projet Génie Logiciel 2015/Programmation projet/GestionProduitHibernateSybaway/WebContent/WEB-INF/lib/ehcache-1.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/elsa/Dropbox/M1 MIAGE/Projet Génie Logiciel 2015/Programmation projet/GestionProduitHibernateSybaway/WebContent/WEB-INF/lib/hibernate3.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/elsa/Dropbox/M1 MIAGE/Projet Génie Logiciel 2015/Programmation projet/GestionProduitHibernateSybaway/WebContent/WEB-INF/lib/jta.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/elsa/Dropbox/M1 MIAGE/Projet Génie Logiciel 2015/Programmation projet/GestionProduitHibernateSybaway/WebContent/WEB-INF/lib/log4j-1.2.11.jar"/>
-	<classpathentry kind="lib" path="C:/Users/elsa/Dropbox/M1 MIAGE/Projet Génie Logiciel 2015/Programmation projet/GestionProduitHibernateSybaway/WebContent/WEB-INF/lib/mysql-connector-java-3.0.17-ga-bin.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/JAR Java/javax.persistence.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/JAR Java/javax.servlet.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hibernate"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
