@@ -4,13 +4,13 @@ div{
 	margin : 10px
 }
 
-table1 th{
+.table13 th{
 	border : 1px dotted gray;
 	padding : 10px;
-	background: blue;
+	background: aqua;
 }
 
-table1 td{
+.table13 td{
 	border : 1px dotted gray;
 	padding : 10px;
 	background: white;

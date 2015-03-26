@@ -16,10 +16,6 @@ import metier.IClientInscriptionEntity;
 @WebServlet("/InscriptionClient")
 public class ControleurInscriptionClient extends HttpServlet {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	
 	private IClientInscriptionEntity client;
 

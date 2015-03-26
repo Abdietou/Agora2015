@@ -12,12 +12,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "CLIENT_INSCRIPTION")
 public class ClientInscriptionEntity implements Serializable {
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_inscription")
@@ -51,22 +45,6 @@ public class ClientInscriptionEntity implements Serializable {
 	public ClientInscriptionEntity() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-	
-	public ClientInscriptionEntity(Long id, String nom, String prenom,
-			String adresse, String ville, String code_postal, String telephone,
-			String mail, String login, String password) {
-		super();
-		this.id = id;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.adresse = adresse;
-		this.ville = ville;
-		this.code_postal = code_postal;
-		this.telephone = telephone;
-		this.mail = mail;
-		this.login = login;
-		this.password = password;
 	}
 
 	public Long getId() {

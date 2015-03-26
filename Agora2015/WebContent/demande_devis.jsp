@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<form method="Get" action="internaute">
+<form method="post" action="internaute">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Demande de devis</title>
 </head>
@@ -170,7 +170,7 @@
                     </tr>
                     
 <tr>
-<td><center><h6><input type="submit" value="Valider"></h6></center></td>
+<td><center><h6><input type="submit" name="action" value="Valider"></h6></center></td>
 </tr>
 			
 	

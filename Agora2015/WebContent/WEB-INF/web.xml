@@ -11,11 +11,11 @@
   </servlet-mapping>
   
  <servlet>
-     <servlet-name>Traitement_demande_inscription</servlet-name>
-     <servlet-class>Servlets.Traitement_demande_inscription</servlet-class>
+     <servlet-name>AgentAdmin</servlet-name>
+     <servlet-class>Servlets.ControlAfficheDemande</servlet-class>
  </servlet>
  <servlet-mapping>
-    <servlet-name>Traitement_demande_inscription</servlet-name>
+    <servlet-name>AgentAdmin</servlet-name>
     <url-pattern>/agent</url-pattern>
   </servlet-mapping>
   
@@ -29,11 +29,11 @@
   </servlet-mapping>
   
  <servlet>
-     <servlet-name>Internaute</servlet-name>
-     <servlet-class>Servlets.Internaute</servlet-class>
+     <servlet-name>InternauteDevis</servlet-name>
+     <servlet-class>Servlets.ControlDemandeInternaute</servlet-class>
  </servlet>
  <servlet-mapping>
-    <servlet-name>Internaute</servlet-name>
+    <servlet-name>InternauteDevis</servlet-name>
     <url-pattern>/internaute</url-pattern>
   </servlet-mapping>
  
