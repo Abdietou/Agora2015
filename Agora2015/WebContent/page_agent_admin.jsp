@@ -5,17 +5,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset=UTF-8">
 <title>Acceuil Agent Administratif</title>
 <link rel="stylesheet" type="text/css" href="css/tab_client.css"/>
 </head>
 <body>
-
-<div>
-	<form action="agent" method="post">
-	</form>
-	</div>
-	
 	<div>
 	<table class="table13" >
 		<tr> 
@@ -30,23 +24,22 @@
 			<th>Login</th>
 			<th>Password</th>
 		</tr>
-		<c:forEach items="${client}" var="cl">
+		<c:forEach items="${client}" var="c">
 		<tr>
-		<td>${cl.id }</td>
-		<td>${cl.nom }</td>
-		<td>${cl.prenom }</td>
-		<td>${cl.adresse }</td>
-		<td>${cl.ville }</td>
-		<td>${cl.code_postal }</td>
-		<td>${cl.telephone }</td>
-		<td>${cl.mail }</td>
-		<td>${cl.login }</td>
-		<td>${cl.password }</td>
+		<td>${c.id }</td>
+		<td>${c.nom }</td>
+		<td>${c.prenom }</td>
+		<td>${c.adresse }</td>
+		<td>${c.ville }</td>
+		<td>${c.code_postal }</td>
+		<td>${c.telephone }</td>
+		<td>${c.mail }</td>
+		<td>${c.login }</td>
+		<td>${c.password }</td>
+ 		<td><a href="agent?action=supprimer&id=${c.id }">Supprimer</a></td> 
 		</tr>
 		</c:forEach>
-				
 	</table>
 	</div>
-		
 </body>
 </html>

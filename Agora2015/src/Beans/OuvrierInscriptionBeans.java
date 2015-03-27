@@ -2,23 +2,23 @@ package Beans;
 
 import java.util.ArrayList;
 
-import Modele.OuvrierEntity;
+import Modele.OuvrierInscriptionEntity;
 
 public class OuvrierInscriptionBeans {
 	
-	private OuvrierEntity ouvrier = new OuvrierEntity();
-	private ArrayList<OuvrierEntity> liste = new ArrayList<OuvrierEntity>();
+	private OuvrierInscriptionEntity ouvrier = new OuvrierInscriptionEntity();
+	private ArrayList<OuvrierInscriptionEntity> liste = new ArrayList<OuvrierInscriptionEntity>();
 	
-	public OuvrierEntity getOuvrier() {
+	public OuvrierInscriptionEntity getOuvrier() {
 		return ouvrier;
 	}
-	public void setOuvrier(OuvrierEntity ouvrier) {
+	public void setOuvrier(OuvrierInscriptionEntity ouvrier) {
 		this.ouvrier = ouvrier;
 	}
-	public ArrayList<OuvrierEntity> getListe() {
+	public ArrayList<OuvrierInscriptionEntity> getListe() {
 		return liste;
 	}
-	public void setListe(ArrayList<OuvrierEntity> liste) {
+	public void setListe(ArrayList<OuvrierInscriptionEntity> liste) {
 		this.liste = liste;
 	}
 	

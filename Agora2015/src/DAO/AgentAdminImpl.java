@@ -11,27 +11,22 @@ import metier.IAgentAdminEntity;
 
 public class AgentAdminImpl implements IAgentAdminEntity {
 
-	@Override
-	public void addClient(ClientInscriptionEntity cl) {
-		
-		
-	}
 
 	@Override
 	public void deleteClient(Long idClient) {
 		Session session=HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
-		Object cl=session.get(ClientInscriptionEntity.class, idClient);
-		if(cl==null) throw new RuntimeException("Client Introuvable");
-		session.delete(cl);
+		Object c=session.get(ClientInscriptionEntity.class, idClient);
+		if(c==null) throw new RuntimeException("Client Introuvable");
+		session.delete(c);
 		session.getTransaction().commit();
 	}
 
 	@Override
-	public void updateClient(ClientInscriptionEntity cl) {
+	public void updateClient(ClientInscriptionEntity c) {
 		Session session=HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
-		session.update(cl);
+		session.update(c);
 		session.getTransaction().commit();
 	}
 
@@ -39,7 +34,7 @@ public class AgentAdminImpl implements IAgentAdminEntity {
 	public List<ClientInscriptionEntity> listClient() {
 		Session session=HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
-		Query req=session.createQuery("select cl from ClientInscriptionEntity cl");
+		Query req=session.createQuery("select c from ClientInscriptionEntity c");
 		List<ClientInscriptionEntity> client=req.list();
 		session.getTransaction().commit();
 		return client;
