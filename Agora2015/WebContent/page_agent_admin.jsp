@@ -41,5 +41,33 @@
 		</c:forEach>
 	</table>
 	</div>
+	
+	<div>
+	<table class="table13" >
+		<tr> 
+			<th>Id</th>
+			<th>Nom</th>
+			<th>Prenom</th>
+			<th>Login</th>
+			<th>Password</th>
+			<th>Disponibilité</th>
+			<th>Prestation</th>
+			<th>Prix</th>
+		</tr>
+		<c:forEach items="${ouvrier}" var="o">
+		<tr>
+		<td>${o.id }</td>
+		<td>${o.nom }</td>
+		<td>${o.prenom }</td>
+		<td>${o.login }</td>
+		<td>${o.password }</td>
+		<td>${o.disponibilite }</td>
+		<td>${o.prestation }</td>
+		<td>${o.prix }</td>
+ 		<td><a href="agent?action=supprimer2&id=${o.id }">Supprimer</a></td> 
+		</tr>
+		</c:forEach>
+	</table>
+	</div>
 </body>
 </html>

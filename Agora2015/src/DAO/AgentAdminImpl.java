@@ -61,4 +61,14 @@ public class AgentAdminImpl implements IAgentAdminEntity {
 		session.getTransaction().commit();
 	}
 
+	@Override
+	public List<OuvrierInscriptionEntity> listOuvrier() {
+		Session session=HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		Query req=session.createQuery("select o from OuvrierInscriptionEntity o");
+		List<OuvrierInscriptionEntity> ouvrier=req.list();
+		session.getTransaction().commit();
+		return ouvrier;
+	}
+
 }

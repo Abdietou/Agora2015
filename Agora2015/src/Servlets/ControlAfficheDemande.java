@@ -30,7 +30,13 @@ public class ControlAfficheDemande extends HttpServlet {
 			Long id=Long.parseLong(request.getParameter("id"));
 			agent.deleteClient(id);
 		}
+		else if (action.equals("supprimer2")){
+			Long id=Long.parseLong(request.getParameter("id"));
+			agent.deleteOuvrier(id);
+			
+		}
 		request.setAttribute("client", agent.listClient());
+		request.setAttribute("ouvrier", agent.listOuvrier());
 		request.getRequestDispatcher("page_agent_admin.jsp").forward(request, response);
 	}
 	
