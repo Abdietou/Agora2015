@@ -29,13 +29,14 @@
         <property name="hibernate.show_sql">true</property>
         
         <!-- Drop and re-create the database schema on startup -->
-<!--          <property name="hibernate.hbm2ddl.auto">update</property>  -->
-         
+          <property name="hibernate.hbm2ddl.auto">update</property>  
+       
 <!--         <mapping resource="dao/Categorie.hbm.xml"/> -->
 <!--         <mapping resource="dao/produit.hbm.xml"/> -->
   
            <mapping class="Modele.ClientInscriptionEntity"/>
            <mapping class="Modele.InternauteEntity"/>
+           <mapping class="Modele.OuvrierInscriptionEntity"/>
            
     </session-factory>
 </hibernate-configuration>

@@ -7,6 +7,7 @@ import org.hibernate.Session;
 
 import util.HibernateUtil;
 import Modele.ClientInscriptionEntity;
+import Modele.OuvrierInscriptionEntity;
 import metier.IAgentAdminEntity;
 
 public class AgentAdminImpl implements IAgentAdminEntity {
@@ -48,6 +49,16 @@ public class AgentAdminImpl implements IAgentAdminEntity {
 		if(cl==null) throw new RuntimeException("Client Introuvable");
 		session.getTransaction().commit();
 		return (ClientInscriptionEntity)cl;
+	}
+
+	@Override
+	public void deleteOuvrier(Long idOuv) {
+		Session session=HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		Object o = session.get(OuvrierInscriptionEntity.class, idOuv);
+		if(o==null) throw new RuntimeException("Ouvrier Introuvable");
+		session.delete(o);
+		session.getTransaction().commit();
 	}
 
 }
