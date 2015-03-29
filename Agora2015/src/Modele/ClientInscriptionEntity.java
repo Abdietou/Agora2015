@@ -41,6 +41,26 @@ public class ClientInscriptionEntity implements Serializable {
 		this.login = login;
 		this.password = password;
 	}
+	
+	
+
+	public ClientInscriptionEntity(Long id, String nom, String prenom,
+			String adresse, String ville, String code_postal, String telephone,
+			String mail, String login, String password) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.adresse = adresse;
+		this.ville = ville;
+		this.code_postal = code_postal;
+		this.telephone = telephone;
+		this.mail = mail;
+		this.login = login;
+		this.password = password;
+	}
+
+
 
 	public ClientInscriptionEntity() {
 		super();

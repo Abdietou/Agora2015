@@ -1,12 +1,26 @@
 package Modele;
 
-public class ClientInscritEntity {
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "CLIENT_INSCRIT")
+public class ClientInscritEntity implements Serializable {
 	
-	private Long id_client_inscrit;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id_client_inscrit")
+	private Long id;
 	private String nom;
 	private String prenom;
 	private String adresse;
-	private int code_postal;
+	private String code_postal;
 	private String ville;
 	private String telephone;
 	private String mail;
@@ -19,11 +33,11 @@ public class ClientInscritEntity {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ClientInscritEntity(Long id_client_inscrit, String nom,
-			String prenom, String adresse, int code_postal, String ville,
+	public ClientInscritEntity(Long id, String nom,
+			String prenom, String adresse, String code_postal, String ville,
 			String telephone, String mail, String login, String password) {
 		super();
-		this.id_client_inscrit = id_client_inscrit;
+		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.adresse = adresse;
@@ -36,7 +50,7 @@ public class ClientInscritEntity {
 	}
 
 	public ClientInscritEntity(String nom, String prenom, String adresse,
-			int code_postal, String ville, String telephone, String mail,
+			String code_postal, String ville, String telephone, String mail,
 			String login, String password) {
 		super();
 		this.nom = nom;
@@ -49,13 +63,17 @@ public class ClientInscritEntity {
 		this.login = login;
 		this.password = password;
 	}
+	
+	
 
-	public Long getId_client_inscrit() {
-		return id_client_inscrit;
+	
+
+	public Long getId() {
+		return id;
 	}
 
-	public void setId_client_inscrit(Long id_client_inscrit) {
-		this.id_client_inscrit = id_client_inscrit;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNom() {
@@ -82,11 +100,11 @@ public class ClientInscritEntity {
 		this.adresse = adresse;
 	}
 
-	public int getCode_postal() {
+	public String getCode_postal() {
 		return code_postal;
 	}
 
-	public void setCode_postal(int code_postal) {
+	public void setCode_postal(String code_postal) {
 		this.code_postal = code_postal;
 	}
 
@@ -130,13 +148,15 @@ public class ClientInscritEntity {
 		this.password = password;
 	}
 
+	
+
 	@Override
 	public String toString() {
-		return "ClientInscritEntity [id_client_inscrit=" + id_client_inscrit
-				+ ", nom=" + nom + ", prenom=" + prenom + ", adresse="
-				+ adresse + ", code_postal=" + code_postal + ", ville=" + ville
-				+ ", telephone=" + telephone + ", mail=" + mail + ", login="
-				+ login + ", password=" + password + "]";
+		return "ClientInscritEntity [id=" + id + ", nom=" + nom + ", prenom="
+				+ prenom + ", adresse=" + adresse + ", code_postal="
+				+ code_postal + ", ville=" + ville + ", telephone=" + telephone
+				+ ", mail=" + mail + ", login=" + login + ", password="
+				+ password + "]";
 	}
 
 	@Override

@@ -37,6 +37,7 @@
 		<td>${c.login }</td>
 		<td>${c.password }</td>
  		<td><a href="agent?action=supprimer&id=${c.id }">Supprimer</a></td> 
+ 		<td><a href="agent?action=ajouter&id=${c.id }">Ajouter</a></td> 
 		</tr>
 		</c:forEach>
 	</table>
@@ -64,7 +65,8 @@
 		<td>${o.disponibilite }</td>
 		<td>${o.prestation }</td>
 		<td>${o.prix }</td>
- 		<td><a href="agent?action=supprimer2&id=${o.id }">Supprimer</a></td> 
+ 		<td><a href="agent?action=supprimer2&id=${o.id }">Supprimer</a></td>
+ 		<td><a href="agent?action=ajouter2&id=${o.id }">Ajouter</a></td>  
 		</tr>
 		</c:forEach>
 	</table>

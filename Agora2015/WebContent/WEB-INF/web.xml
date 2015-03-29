@@ -1,62 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
- 
- <servlet>
-     <servlet-name>Connexion</servlet-name>
-     <servlet-class>Servlets.Connexion</servlet-class>
- </servlet>
- <servlet-mapping>
+  <servlet>
+    <servlet-name>Connexion</servlet-name>
+    <servlet-class>Servlets.Connexion</servlet-class>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>Connexion</servlet-name>
     <url-pattern>/con</url-pattern>
   </servlet-mapping>
-  
- <servlet>
-     <servlet-name>AgentAdmin</servlet-name>
-     <servlet-class>Servlets.ControlAfficheDemande</servlet-class>
- </servlet>
- <servlet-mapping>
+  <servlet>
+    <servlet-name>AgentAdmin</servlet-name>
+    <servlet-class>Servlets.ControlAfficheDemande</servlet-class>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>AgentAdmin</servlet-name>
     <url-pattern>/agent</url-pattern>
   </servlet-mapping>
-  
- <servlet>
-     <servlet-name>InscriptionClient</servlet-name>
-     <servlet-class>Servlets.ControleurInscriptionClient</servlet-class>
- </servlet>
- <servlet-mapping>
+  <servlet>
+    <servlet-name>InscriptionClient</servlet-name>
+    <servlet-class>Servlets.ControleurInscriptionClient</servlet-class>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>InscriptionClient</servlet-name>
     <url-pattern>/inscription</url-pattern>
   </servlet-mapping>
-  
- <servlet>
-     <servlet-name>InternauteDevis</servlet-name>
-     <servlet-class>Servlets.ControlDemandeInternaute</servlet-class>
- </servlet>
- <servlet-mapping>
+  <servlet>
+    <servlet-name>InternauteDevis</servlet-name>
+    <servlet-class>Servlets.ControlDemandeInternaute</servlet-class>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>InternauteDevis</servlet-name>
     <url-pattern>/internaute</url-pattern>
   </servlet-mapping>
-  
   <servlet>
-     <servlet-name>InscriptionOuvrier</servlet-name>
-     <servlet-class>Servlets.ControleurInscriptionOuvrier</servlet-class>
- </servlet>
- <servlet-mapping>
+    <servlet-name>InscriptionOuvrier</servlet-name>
+    <servlet-class>Servlets.ControleurInscriptionOuvrier</servlet-class>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>InscriptionOuvrier</servlet-name>
     <url-pattern>/inscription_ouvrier</url-pattern>
   </servlet-mapping>
- 
- 
- <!--   <display-name>Agora2015</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list> -->
-  
-  
-  
 </web-app>
