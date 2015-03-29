@@ -8,8 +8,47 @@
 <meta charset=UTF-8">
 <title>Acceuil Agent Administratif</title>
 <link rel="stylesheet" type="text/css" href="css/tab_client.css"/>
+
+<script type="text/javascript">
+function confirmation(id){
+	var conf=confirm("Êtes vous sûre de vouloir supprimer cette demande d'inscription client ?");
+	if(conf==true)
+		document.location="agent?action=supprimer&id="+id;
+}
+</script>
+
+<script type="text/javascript">
+function confirmation2(id){
+	var conf=confirm("Êtes vous sûre de vouloir supprimer cette demande d'inscription ouvrier ?");
+	if(conf==true)
+		document.location="agent?action=supprimer2&id="+id;
+}
+</script>
+
+<script type="text/javascript">
+function confirmation3(id){
+	var conf=confirm("Êtes vous sûre de vouloir ajouter cette demande d'inscription client ?");
+	if(conf==true)
+		document.location="agent?action=ajouter&id="+id;
+}
+</script>
+
+<script type="text/javascript">
+function confirmation4(id){
+	var conf=confirm("Êtes vous sûre de vouloir ajouter cette demande d'inscription ouvrier ?");
+	if(conf==true)
+		document.location="agent?action=ajouter2&id="+id;
+}
+</script>
+
 </head>
 <body>
+
+<div id="header">
+	<font size=100 face="gabriola" style="text-align:center;"> Page Agent Administratif  </font>	
+</div>
+
+<h3>Demande d'inscription des clients</h3>
 	<div>
 	<table class="table13" >
 		<tr> 
@@ -36,13 +75,14 @@
 		<td>${c.mail }</td>
 		<td>${c.login }</td>
 		<td>${c.password }</td>
- 		<td><a href="agent?action=supprimer&id=${c.id }">Supprimer</a></td> 
- 		<td><a href="agent?action=ajouter&id=${c.id }">Ajouter</a></td> 
+ 		<td><a href="javascript:confirmation('${c.id }')">Supprimer</a></td> 
+ 		<td><a href="javascript:confirmation3('${c.id }')">Ajouter</a></td> 
 		</tr>
 		</c:forEach>
 	</table>
 	</div>
 	
+	<h3>Demande d'inscription des ouvriers</h3>
 	<div>
 	<table class="table13" >
 		<tr> 
@@ -65,8 +105,8 @@
 		<td>${o.disponibilite }</td>
 		<td>${o.prestation }</td>
 		<td>${o.prix }</td>
- 		<td><a href="agent?action=supprimer2&id=${o.id }">Supprimer</a></td>
- 		<td><a href="agent?action=ajouter2&id=${o.id }">Ajouter</a></td>  
+ 		<td><a href="javascript:confirmation2('${o.id }')">Supprimer</a></td>
+ 		<td><a href="javascript:confirmation4('${o.id }')">Ajouter</a></td>  
 		</tr>
 		</c:forEach>
 	</table>

@@ -57,6 +57,21 @@ public class OuvrierInscritEntity implements Serializable {
 		this.prestation = prestation;
 		this.prix = prix;
 	}
+	
+
+	public OuvrierInscritEntity(Long id, String nom, String prenom,
+			String login, String password, Date disponibilite,
+			String prestation, double prix) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.login = login;
+		this.password = password;
+		this.disponibilite = disponibilite;
+		this.prestation = prestation;
+		this.prix = prix;
+	}
 
 	public Long getId() {
 		return id;

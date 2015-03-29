@@ -52,6 +52,16 @@ public class AgentAdminImpl implements IAgentAdminEntity {
 		session.getTransaction().commit();
 		return (ClientInscriptionEntity)cl;
 	}
+	
+	@Override
+	public OuvrierInscriptionEntity getOuvrier(Long idOuv) {
+		Session session=HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		Object ouv=session.get(OuvrierInscriptionEntity.class, idOuv);
+		if(ouv==null) throw new RuntimeException("Ouvrier Introuvable");
+		session.getTransaction().commit();
+		return (OuvrierInscriptionEntity)ouv;
+	}
 
 	@Override
 	public void deleteOuvrier(Long idOuv) {
@@ -99,14 +109,5 @@ public class AgentAdminImpl implements IAgentAdminEntity {
 		session.getTransaction().commit();
 	}
 
-	@Override
-	public OuvrierInscriptionEntity getOuvrier(Long idOuv) {
-		Session session=HibernateUtil.getSessionFactory().getCurrentSession();
-		session.beginTransaction();
-		Object ouv=session.get(ClientInscriptionEntity.class, idOuv);
-		if(ouv==null) throw new RuntimeException("Client Introuvable");
-		session.getTransaction().commit();
-		return (OuvrierInscriptionEntity)ouv;
-	}
 
 }

@@ -1,6 +1,7 @@
 package Servlets;
 
 import java.io.IOException;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import DAO.AgentAdminImpl;
 import Modele.ClientInscriptionEntity;
 import Modele.ClientInscritEntity;
+import Modele.OuvrierInscriptionEntity;
+import Modele.OuvrierInscritEntity;
 import metier.IAgentAdminEntity;
 
 @WebServlet("/AgentAdmin")
@@ -51,12 +54,25 @@ public class ControlAfficheDemande extends HttpServlet {
 			String mail = cl.getMail();
 			String login = cl.getLogin();
 			String password = cl.getPassword();
+			
 			agent.InscrireClient(new ClientInscritEntity(id_client_inscrit, nom, prenom, adresse, code_postal, ville, telephone, mail, login, password));
+			agent.deleteClient(id_client_inscrit);
 		}
 		
 		else if(action.equals("ajouter2")){
+			Long id=Long.parseLong(request.getParameter("id"));
+			OuvrierInscriptionEntity ouv = agent.getOuvrier(id);
+			Long id_ouvrier_inscrit = ouv.getId();
+			String nom = ouv.getNom();
+			String prenom = ouv.getPrenom();
+			String login = ouv.getLogin();
+			String password = ouv.getPassword();
+			Date disponibilite = ouv.getDisponibilite();
+			String prestation = ouv.getPrestation();
+			double prix = ouv.getPrix();
 			
-			
+			agent.InscrireOuvrier(new OuvrierInscritEntity(id_ouvrier_inscrit, nom, prenom, login, password, disponibilite, prestation, prix));
+			agent.deleteOuvrier(id_ouvrier_inscrit);
 		}
 		
 		request.setAttribute("client", agent.listClient());
