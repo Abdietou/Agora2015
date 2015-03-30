@@ -2,6 +2,7 @@ package metier;
 
 import java.util.List;
 
+import Modele.AgentAdminEntity;
 import Modele.ClientInscriptionEntity;
 import Modele.ClientInscritEntity;
 import Modele.OuvrierInscriptionEntity;
@@ -20,5 +21,6 @@ public interface IAgentAdminEntity {
 	public List<OuvrierInscriptionEntity> listOuvrier();
 	public ClientInscriptionEntity getClient(Long idClient);
 	public OuvrierInscriptionEntity getOuvrier(Long idOuv);
+	
 
 }

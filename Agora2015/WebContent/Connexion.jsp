@@ -26,17 +26,17 @@
 		
 					<ul id="menu">
 		  						 <li class="divider">
-		  						 	<a  href="demande_devis.jsp"><img alt="" src="images/home.jpg"> &nbsp Demande Devis</a>
+		  						 	<a  href="demande_devis.jsp"> &nbsp Demande Devis</a>
 		  						 </li>
 		                    
 		                        <li >
-		                       	 	<a  href="inscription.jsp"><img alt="" src="images/conex.jpg"> &nbsp Faire une demande d'inscription en tant que client</a>
+		                       	 	<a  href="formulaire_inscription_client.jsp"> &nbsp Faire une demande d'inscription en tant que client</a>
 		                        </li>
 		                        
-									
-								
-				                        	
-								
+		                         <li >
+		                       	 	<a  href="formulaire_inscription_ouvrier.jsp"> &nbsp Faire une demande d'inscription en tant qu'ouvrier externe</a>
+		                        </li>
+		                        		
 		  			</ul>
 		 
   
@@ -59,7 +59,7 @@
 </tr>
 <tr>
 <td><h6>password: &nbsp </h6></td>
-<td><h6><input type="text" name="password" id="password" value=""></h6></td>
+<td><h6><input type="password" name="password" id="password" value=""></h6></td>
 </tr>
 
 <tr>

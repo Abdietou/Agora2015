@@ -37,8 +37,9 @@
            <mapping class="Modele.ClientInscriptionEntity"/>
            <mapping class="Modele.InternauteEntity"/>
            <mapping class="Modele.OuvrierInscriptionEntity"/>
-            <mapping class="Modele.ClientInscritEntity"/>
+           <mapping class="Modele.ClientInscritEntity"/>
            <mapping class="Modele.OuvrierInscritEntity"/>
+           <mapping class="Modele.AgentAdminEntity"/>
            
     </session-factory>
 </hibernate-configuration>

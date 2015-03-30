@@ -6,6 +6,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 import util.HibernateUtil;
+import Modele.AgentAdminEntity;
 import Modele.ClientInscriptionEntity;
 import Modele.ClientInscritEntity;
 import Modele.OuvrierInscriptionEntity;
@@ -108,6 +109,5 @@ public class AgentAdminImpl implements IAgentAdminEntity {
 		}
 		session.getTransaction().commit();
 	}
-
 
 }
