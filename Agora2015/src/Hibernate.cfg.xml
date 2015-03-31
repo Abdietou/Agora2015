@@ -40,6 +40,9 @@
            <mapping class="Modele.ClientInscritEntity"/>
            <mapping class="Modele.OuvrierInscritEntity"/>
            <mapping class="Modele.AgentAdminEntity"/>
+           <mapping class="Modele.ServiceComptableEntity"/>
+           <mapping class="Modele.ServiceMarketingEntity"/>
+           <mapping class="Modele.ServiceTechniqueEntity"/>
            
     </session-factory>
 </hibernate-configuration>

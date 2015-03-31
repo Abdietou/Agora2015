@@ -40,4 +40,13 @@
     <servlet-name>InscriptionOuvrier</servlet-name>
     <url-pattern>/inscription_ouvrier</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>S_technique</servlet-name>
+    <servlet-class>Servlets.ControlConnexionS_technique</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>S_technique</servlet-name>
+    <url-pattern>/con2</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

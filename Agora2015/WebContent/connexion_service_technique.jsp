@@ -1,17 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
 <html>
 <head>
-<form method="Get" action="con">
-<script src="bgMax.min.js" type="text/javascript"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Page d'acceuil</title>
+<title>Connexion Service Technique</title>
 </head>
+<form method="Get" action="con2">
 <body>
-
-</body>
 
 <div id="header">
 
@@ -26,21 +22,8 @@
 		
 					<ul id="menu">
 		  						 <li class="divider">
-		  						 	<a  href="demande_devis.jsp"> &nbsp Demande Devis</a>
-		  						 </li>
-		                    
-		                        <li >
-		                       	 	<a  href="formulaire_inscription_client.jsp"> &nbsp Faire une demande d'inscription en tant que client</a>
-		                        </li>
-		                        
-		                         <li >
-		                       	 	<a  href="formulaire_inscription_ouvrier.jsp"> &nbsp Faire une demande d'inscription en tant qu'ouvrier externe</a>
-		                        </li>
-		                        
-		                        <li >
-		                       	 	<a  href="connexion_service_technique.jsp"> &nbsp Se connecter au service tecnhique</a>
-		                        </li>
-		                        		
+		  						 	<a  href="Connexion.jsp"> &nbsp Retour à l'acceuil</a>
+		  						 </li>       		
 		  			</ul>
 		 
   
@@ -50,10 +33,8 @@
 <div id="menu-droite2"><br> <br> <center> <BR> <BR><img src="images/renovation-maison.jpg" width=200 height=250> </center></div>
     <div id="contenu">
          <div id="bordure2">
-
-
-       
-<table align="center" cellspacing=0 cellpadding=0 > 
+         
+         <table align="center" cellspacing=0 cellpadding=0 > 
 <tr><font size=5 face=gabriola color=white>INFORMATIONS</font></tr>
 <tr><center><h5>Connectez-vous pour accéder à votre compte</h5></center><br></tr>
 
@@ -81,5 +62,6 @@
 
 </div> 
 
+</body>
 </form>
 </html>

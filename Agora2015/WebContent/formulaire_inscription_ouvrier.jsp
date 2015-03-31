@@ -72,7 +72,7 @@ if(!Modernizr.inputtypes.date){
                 <br />
                 
                 <label for="password">Mot de passe <span class="requis"></span></label>
-                <input type="text"  name="password" value="" size="20" maxlength="60" />
+                <input type="password"  name="password" value="" size="20" maxlength="60" />
                 <br />
                 
                  <input type="submit"  name="action" value="Valider" />
