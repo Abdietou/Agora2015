@@ -4,17 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Acceuil Service Technique</title>
+<title>Insert title here</title>
 </head>
 <body>
-
-<div id="header">
-
-	<font size=100 face="gabriola" style="text-align:center;"> Acceuil Service Technique  </font>	
-	
-</div>
-
-<h3>Demande de devis</h3>
 
 </body>
 </html>

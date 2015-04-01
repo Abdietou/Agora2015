@@ -11,7 +11,7 @@
 <body>
 
 <!-- Script DATE  -->
-	<script language="javascript" type="text/javascript">
+	<script language="javascript" >
 	var initDatepicker = function() {  
     $('input[type=date]').each(function() {  
         var $input = $(this);  

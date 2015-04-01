@@ -37,8 +37,20 @@
 		                       	 	<a  href="formulaire_inscription_ouvrier.jsp"> &nbsp Faire une demande d'inscription en tant qu'ouvrier externe</a>
 		                        </li>
 		                        
+		                         <li >
+		                       	 	<a  href="/Agora2015/agent"> &nbsp Se connecter en tant qu'agent administratif</a>
+		                        </li>
+		                        
 		                        <li >
-		                       	 	<a  href="connexion_service_technique.jsp"> &nbsp Se connecter au service tecnhique</a>
+		                       	 	<a  href="page_service_technique.jsp"> &nbsp Se connecter au service tecnhique</a>
+		                        </li>
+		                        
+		                         <li >
+		                       	 	<a  href="page_service_comptable.jsp"> &nbsp Se connecter au service comptable</a>
+		                        </li>
+		                        
+		                        <li >
+		                       	 	<a  href="page_service_marketing.jsp"> &nbsp Se connecter au service marketing</a>
 		                        </li>
 		                        		
 		  			</ul>
@@ -53,24 +65,24 @@
 
 
        
-<table align="center" cellspacing=0 cellpadding=0 > 
-<tr><font size=5 face=gabriola color=white>INFORMATIONS</font></tr>
-<tr><center><h5>Connectez-vous pour accéder à votre compte</h5></center><br></tr>
+<!-- <table align="center" cellspacing=0 cellpadding=0 >  -->
+<!-- <tr><font size=5 face=gabriola color=white>INFORMATIONS</font></tr> -->
+<!-- <tr><center><h5>Connectez-vous pour accéder à votre compte</h5></center><br></tr> -->
 
-<tr>
-<td><h6>login:&nbsp </h6></td>
-<td><h6><input type="text" name="login" id="login" value=""></h6></td>
-</tr>
-<tr>
-<td><h6>password: &nbsp </h6></td>
-<td><h6><input type="password" name="password" id="password" value=""></h6></td>
-</tr>
+<!-- <tr> -->
+<!-- <td><h6>login:&nbsp </h6></td> -->
+<!-- <td><h6><input type="text" name="login" id="login" value=""></h6></td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td><h6>password: &nbsp </h6></td> -->
+<!-- <td><h6><input type="password" name="password" id="password" value=""></h6></td> -->
+<!-- </tr> -->
 
-<tr>
-<td></td>
-<td><center><h6><input type="submit" value="SE CONNECTER"></h6></center></td>
-</tr>
-</table><br>
+<!-- <tr> -->
+<!-- <td></td> -->
+<!-- <td><center><h6><input type="submit" value="SE CONNECTER"></h6></center></td> -->
+<!-- </tr> -->
+<!-- </table><br> -->
 
 </div>
         
