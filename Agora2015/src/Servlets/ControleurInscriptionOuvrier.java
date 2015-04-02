@@ -39,7 +39,7 @@ public class ControleurInscriptionOuvrier extends HttpServlet {
 			String login = req.getParameter("login");
 			String password = req.getParameter("password");
 			
-			DateFormat df=new SimpleDateFormat("dd-MMM-yy");
+			DateFormat df=new SimpleDateFormat("yyyy-MM-dd");
 			String disponibilite = req.getParameter("disponibilite");
 			Date startDate=null;
 			try {
