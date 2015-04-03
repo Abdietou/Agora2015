@@ -163,7 +163,7 @@ public class ClientInscritEntity implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((login == null) ? 0 : login.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result
 				+ ((password == null) ? 0 : password.hashCode());
 		return result;
@@ -178,10 +178,10 @@ public class ClientInscritEntity implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		ClientInscritEntity other = (ClientInscritEntity) obj;
-		if (login == null) {
-			if (other.login != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!login.equals(other.login))
+		} else if (!id.equals(other.id))
 			return false;
 		if (password == null) {
 			if (other.password != null)
@@ -190,6 +190,8 @@ public class ClientInscritEntity implements Serializable {
 			return false;
 		return true;
 	}
+
+	
 	
 	
 	
