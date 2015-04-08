@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import DAO.ClientInscritImpl;
 import metier.IClientInscrit;
@@ -25,8 +26,7 @@ public class ControlAuthClient extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public ControlAuthClient() {
-        super();
-        // TODO Auto-generated constructor stub
+    	cl_inscrit = new ClientInscritImpl();
     }
 
 	/**
@@ -45,7 +45,9 @@ public class ControlAuthClient extends HttpServlet {
 		try {
 		if(cl_inscrit.getClient(id).getId().equals(id) && cl_inscrit.getClient(id).getPassword().equals(password)){
 			System.out.println("Connexion réussie, Bienvue :" + cl_inscrit.getClient(id).getPrenom() );
-			//rediriger vers l'acceuil du client
+			HttpSession session = request.getSession();
+			session.setAttribute("sessionClient", id);
+			response.sendRedirect(request.getContextPath() + "/Accueil_client.jsp");
 		}else{ 
 			System.out.println("Erreur de saisie, veuillez recommencer");
 		}

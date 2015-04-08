@@ -56,6 +56,30 @@
     <servlet-name>AuthClient</servlet-name>
     <url-pattern>/con_client</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>AuthOuvrier</servlet-name>
+    <servlet-class>Servlets.ControlAuthOuvrier</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AuthOuvrier</servlet-name>
+    <url-pattern>/con_ouvrier</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ModifInfo_ouvrier</servlet-name>
+    <servlet-class>Servlets.ControlModifInfo_ouvrier</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModifInfo_ouvrier</servlet-name>
+    <url-pattern>/modif</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DemandeDevisClient</servlet-name>
+    <servlet-class>Servlets.ControlDemandeDevisClient</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DemandeDevisClient</servlet-name>
+    <url-pattern>/demClient</url-pattern>
+  </servlet-mapping>
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>iden</web-resource-name>
