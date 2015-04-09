@@ -80,6 +80,14 @@
     <servlet-name>DemandeDevisClient</servlet-name>
     <url-pattern>/demClient</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>AfficheDemDevisInter</servlet-name>
+    <servlet-class>Servlets.ControlAfficheDemDevisInter</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AfficheDemDevisInter</servlet-name>
+    <url-pattern>/internaute_dem</url-pattern>
+  </servlet-mapping>
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>iden</web-resource-name>

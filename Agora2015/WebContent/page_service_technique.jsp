@@ -14,7 +14,23 @@
 	
 </div>
 
-<h3>Demande de devis</h3>
+<h3>Demande de devis Client</h3>
+<div id="block">
+					<ul id="menu">
+		  						 <li class="divider">
+		  						 	<a  href="liste_demande_devis_client.jsp"> &nbsp Liste de demande de devis des clients</a>
+		  						 </li>		 
+		  			</ul> 
+</div>
+
+<h3>Demande de devis internaute</h3>
+<div id="block">
+					<ul id="menu">
+		  						 <li class="divider">
+		  						 	<a  href="/Agora2015/internaute_dem"> &nbsp Liste des demandes de devis des internautes</a>
+		  						 </li>		 
+		  			</ul> 
+</div>
 
 </body>
 </html>
