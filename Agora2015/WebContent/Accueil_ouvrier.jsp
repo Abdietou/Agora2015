@@ -5,10 +5,40 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<form method="post" action="modif">
+<form method="post" action="modif" onsubmit="return verif(this)">
 <link rel="stylesheet" type="text/css" href="css/tab_client.css"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Acceuil Ouvrier</title>
+<script type="text/javascript">
+function verif(f)
+	{
+		if(!f.nom.value){
+			alert("Indiquer votre nom !");return false;}
+		if (!f.prenom.value){
+	        alert("Indiquer votre prenom");return false;}
+		if (!f.prix.value){
+	        alert("Indiquer le prix");return false;}
+		if(isNaN(f.prix.value) == true){
+			alert("Votre tarif horaire n'est pas correct");return false;}
+		if (!f.disponibilite.value){
+	        alert("Indiquer votre disponibilité");return false;}
+		if (!f.prestation.value){
+	        alert("Indiquer vos prestations");return false;}
+		if (!f.login.value){
+	        alert("Indiquer votre login");return false;}
+		if (!f.password.value){
+	        alert("Indiquer votre mot de passe");return false;}
+		if(f.password.value != f.password2.value){
+			 alert("Vos mots de passe ne correspondent pas");return false;}
+		if(f.password.value.length<3 ){
+			 alert("Votre mot de passe doit contenir au minimum 3 caractères");return false;}
+		if(f.password.value != f.password2.value){
+			 alert("Vos mots de passe ne correspondent pas !");return false;}
+		else
+			alert("Vos Modifications ont étés prise en compte");
+		return true;
+		}
+</script>
 </head>
 
 <body>

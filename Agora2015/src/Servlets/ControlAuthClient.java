@@ -46,7 +46,7 @@ public class ControlAuthClient extends HttpServlet {
 		if(cl_inscrit.getClient(id).getId().equals(id) && cl_inscrit.getClient(id).getPassword().equals(password)){
 			System.out.println("Connexion réussie, Bienvue :" + cl_inscrit.getClient(id).getPrenom() );
 			HttpSession session = request.getSession();
-			session.setAttribute("sessionClient", id);
+			session.setAttribute("sessId", cl_inscrit.getClient(id).getId());
 			response.sendRedirect(request.getContextPath() + "/Accueil_client.jsp");
 		}else{ 
 			System.out.println("Erreur de saisie, veuillez recommencer");
@@ -61,7 +61,7 @@ public class ControlAuthClient extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }
