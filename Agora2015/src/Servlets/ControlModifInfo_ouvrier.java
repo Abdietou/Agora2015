@@ -53,10 +53,13 @@ public class ControlModifInfo_ouvrier extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String action = request.getParameter("action");
+
 			if (action.equals("Modifier")){
-				
 				Long id = Long.parseLong(request.getParameter("id"));
-				String nom = request.getParameter("nom");
+				HttpSession session = request.getSession();
+				try {
+				
+				String nom = request.getParameter("id");
 				String prenom = request.getParameter("prenom");
 				String login = request.getParameter("login");
 				String password = request.getParameter("password");
@@ -76,9 +79,20 @@ public class ControlModifInfo_ouvrier extends HttpServlet {
 				ouv.setId(id);
 				ouv_inscrit.UpdateInfo(ouv);
 				
+				session.setAttribute("sessId", ouv_inscrit.getOuvrier(id).getId());
+				session.setAttribute("sessNom", ouv_inscrit.getOuvrier(id).getNom());
+				session.setAttribute("sessPrenom", ouv_inscrit.getOuvrier(id).getPrenom());
+				session.setAttribute("sessLogin", ouv_inscrit.getOuvrier(id).getLogin());
+				session.setAttribute("sessPassword", ouv_inscrit.getOuvrier(id).getPassword());
+				session.setAttribute("sessDispo", ouv_inscrit.getOuvrier(id).getDisponibilite());
+				session.setAttribute("sessPrestation", ouv_inscrit.getOuvrier(id).getPrestation());
+				session.setAttribute("sessPrix", ouv_inscrit.getOuvrier(id).getPrix());
+				
+			} catch (Exception e) {
+				
 			}
-			
 			request.getRequestDispatcher("Accueil_ouvrier.jsp").forward(request, response);
+			
 	}
-
+	}
 }

@@ -68,7 +68,7 @@
                  <label for="password2">Confirmer votre mot de passe <span class="requis"></span></label>
                 <input type="password"  name="password2" value="" size="20" maxlength="60"  />
                 <br />
-                
+                    
                  <input type="submit"  name="action" value="Modifier" />
                 <br />
 </fieldset>
@@ -98,6 +98,7 @@
 		<td>${sessionScope.sessPrix }</td>
 <%-- 		<td> <a href="modif?action=edit&id=${sessionScope.sessId }">Editer</a></td> --%>
 		</tr>
+		
 	</table>
 	</div>
 		 
