@@ -13,25 +13,24 @@ import DAO.ServiceTechniqueImpl;
 import metier.IServiceTechnique;
 
 /**
- * Servlet implementation class ControlAfficheDemDevisInter
+ * Servlet implementation class ControlAfficheDemDevis
  */
-@WebServlet("/AfficheDemDevisInter")
-public class ControlAfficheDemDevisInter extends HttpServlet {
-
+@WebServlet("/AfficheDemDevisClient")
+public class ControlAfficheDemDevisClient extends HttpServlet {
 	private IServiceTechnique sc;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ControlAfficheDemDevisInter() {
-       sc = new ServiceTechniqueImpl();
+    public ControlAfficheDemDevisClient() {
+    	 sc = new ServiceTechniqueImpl();
     }
 
 	/**
 	 * @see Servlet#init(ServletConfig)
 	 */
 	public void init(ServletConfig config) throws ServletException {
-		sc = new ServiceTechniqueImpl();
+		 sc = new ServiceTechniqueImpl();
 	}
 
 	/**
@@ -45,8 +44,9 @@ public class ControlAfficheDemDevisInter extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("internaute", sc.listInternauteDevis());
-		request.getRequestDispatcher("liste_demande_devis_internaute.jsp").forward(request, response);
+		
+		request.setAttribute("client", sc.listDevisClient());
+		request.getRequestDispatcher("liste_demande_devis_client.jsp").forward(request, response);
 	}
 
 }

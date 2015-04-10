@@ -12,7 +12,7 @@
 
 <form method="post" action="internaute_dem">
 
-<h3>Demande d'inscription des clients</h3>
+<h3>Demande de devis des internautes</h3>
 	<div>
 	<table class="table13" >
 		<tr> 

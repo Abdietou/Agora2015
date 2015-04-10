@@ -3,11 +3,45 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<form method="post" action="internaute">
+<form method="post" action="internaute" onsubmit="return verif(this)">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Demande de devis</title>
 </head>
 <body>
+<script language="javascript" >
+function verif(f)
+{
+	if(!date_debut_travaux.value){
+			alert("Indiquer votre date de disponibilité !");return false;}
+	if(!domaine.value){
+		alert("Indiquer votre domaine de compétence !");return false;}
+	if(!titre.value){
+		alert("Indiquer le titre de votre demande !");return false;}
+	if(!delai.value){
+		alert("Indiquer votre délai !");return false;}
+	if(!budget.value){
+		alert("Indiquer votre budget !");return false;}
+	if(isNaN(f.budget.value) == true){
+			alert("Votre budget n'est pas correct !");return false;}
+	if(!adresse.value){
+		alert("Indiquer votre adresse complète !");return false;}
+	if(!f.nom.value){
+			alert("Indiquer votre nom !");return false;}
+	if (!f.prenom.value){
+	        alert("Indiquer votre prenom");return false;}
+	if (!f.telephone.value){
+        alert("Indiquer votre telephone !");return false;}
+	if (!f.mail.value){
+        alert("Indiquer votre adresse mail !");return false;}
+	if(f.telephone.value.length<10 || (isNaN(f.telephone.value) == true)){
+		 alert("Entrez un numéro de téléphone correct à 10 chiffres");return false;}
+	if(!f.mail.value.match(/[a-z0-9_\-\.]+@[a-z0-9_\-\.]+\.[a-z]+/i)) {
+	    alert(f.mail.value + " n'est pas une adresse valide");return false;}
+	else
+		alert("Votre demande de devis sera traité par le service technique !");
+		return true; 
+	}
+</script>
 
 <tr>
 <td colspan="2">     
@@ -25,6 +59,7 @@
 <td class="label">Domaine <div class="important">*</div></td>
 <td class="field">
 <select name="domaine" id="domaine" class="domaine">
+<option value =""> </option>
 <option value="Travaux divers, rénovation, aménagement">Travaux divers, rénovation, aménagement</option>
 <option value="Construction, agrandissement">Construction, agrandissement</option>
 <option value="Rénovation totale, tous corps d'état">Rénovation totale, tous corps d'état</option>
@@ -72,7 +107,9 @@
                            
                            
 								  
-                                  <select name="delai" id="delai"><option value="Dès que possible">Dès que possible</option>
+                                  <select name="delai" id="delai">
+<option value=""> </option>
+<option value="Dès que possible">Dès que possible</option>
 <option value="3 mois">D&#39;ici 3 mois</option>
 <option value="6 mois">D&#39;ici 6 mois</option>
 <option value="plus de 6 mois">Dans plus de 6 mois</option>

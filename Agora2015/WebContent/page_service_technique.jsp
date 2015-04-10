@@ -18,7 +18,7 @@
 <div id="block">
 					<ul id="menu">
 		  						 <li class="divider">
-		  						 	<a  href="liste_demande_devis_client.jsp"> &nbsp Liste de demande de devis des clients</a>
+		  						 	<a  href="/Agora2015/client_dem"> &nbsp Liste de demande de devis des clients</a>
 		  						 </li>		 
 		  			</ul> 
 </div>
