@@ -3,22 +3,20 @@ package Modele;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Entity;
+import javax.persistence.Column;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "DEMANDE_DEVIS_CLIENT")
-public class DemandeDevisClientEntity implements Serializable {
+public class DevisEntity implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id_devis;
+	@Column(name="id_devis_etabli")
+	private Long id;
 	private Date date_debut_travaux;
 	private String domaine;
 	private String titre;
@@ -33,36 +31,23 @@ public class DemandeDevisClientEntity implements Serializable {
 	@OneToOne 
 	@JoinColumn(name="id_client_inscrit")
 	private ClientInscritEntity client_demandeur;
+	@OneToOne 
+	@JoinColumn(name="id_ouvrier_inscrit")
+	private OuvrierInscritEntity ouvrier_choisi;
+	private Double prixTTC;
+	private boolean accepter;
 	
-	public DemandeDevisClientEntity() {
+	public DevisEntity() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	public DemandeDevisClientEntity(Long id_devis, Date date_debut_travaux,
-			String domaine, String titre, String description, String delai,
-			String budget, String adresse, String nom, String prenom,
-			String mail, String telephone, ClientInscritEntity client_demandeur) {
-		super();
-		this.id_devis = id_devis;
-		this.date_debut_travaux = date_debut_travaux;
-		this.domaine = domaine;
-		this.titre = titre;
-		this.description = description;
-		this.delai = delai;
-		this.budget = budget;
-		this.adresse = adresse;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.mail = mail;
-		this.telephone = telephone;
-		this.client_demandeur = client_demandeur;
-	}
-
-	public DemandeDevisClientEntity(Date date_debut_travaux, String domaine,
-			String titre, String description, String delai, String budget,
-			String adresse, String nom, String prenom, String mail,
-			String telephone, ClientInscritEntity client_demandeur) {
+	
+	
+	public DevisEntity(Date date_debut_travaux, String domaine, String titre,
+			String description, String delai, String budget, String adresse,
+			String nom, String prenom, String mail, String telephone,
+			ClientInscritEntity client_demandeur,
+			OuvrierInscritEntity ouvrier_choisi, Double prixTTC) {
 		super();
 		this.date_debut_travaux = date_debut_travaux;
 		this.domaine = domaine;
@@ -76,36 +61,19 @@ public class DemandeDevisClientEntity implements Serializable {
 		this.mail = mail;
 		this.telephone = telephone;
 		this.client_demandeur = client_demandeur;
-	}
-	
-	
-
-	public DemandeDevisClientEntity(Date date_debut_travaux, String domaine,
-			String titre, String description, String delai, String budget,
-			String adresse, String nom, String prenom, String mail,
-			String telephone) {
-		super();
-		this.date_debut_travaux = date_debut_travaux;
-		this.domaine = domaine;
-		this.titre = titre;
-		this.description = description;
-		this.delai = delai;
-		this.budget = budget;
-		this.adresse = adresse;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.mail = mail;
-		this.telephone = telephone;
-	}
-	
-	
-
-	public Long getId_devis() {
-		return id_devis;
+		this.ouvrier_choisi = ouvrier_choisi;
+		this.prixTTC = prixTTC;
 	}
 
-	public void setId_devis(Long id_devis) {
-		this.id_devis = id_devis;
+
+
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public Date getDate_debut_travaux() {
@@ -204,16 +172,42 @@ public class DemandeDevisClientEntity implements Serializable {
 		this.client_demandeur = client_demandeur;
 	}
 
+	public OuvrierInscritEntity getOuvrier_choisi() {
+		return ouvrier_choisi;
+	}
+
+	public void setOuvrier_choisi(OuvrierInscritEntity ouvrier_choisi) {
+		this.ouvrier_choisi = ouvrier_choisi;
+	}
+
+	public Double getPrixTTC() {
+		return prixTTC;
+	}
+
+	public void setPrixTTC(Double prixTTC) {
+		this.prixTTC = prixTTC;
+	}
+
+	public boolean isAccepter() {
+		return accepter;
+	}
+
+	public void setAccepter(boolean accepter) {
+		this.accepter = accepter;
+	}
+
 	@Override
 	public String toString() {
-		return "DemandeDevisClientEntity [id_devis=" + id_devis
-				+ ", date_debut_travaux=" + date_debut_travaux + ", domaine="
-				+ domaine + ", titre=" + titre + ", description=" + description
-				+ ", delai=" + delai + ", budget=" + budget + ", adresse="
-				+ adresse + ", nom=" + nom + ", prenom=" + prenom + ", mail="
-				+ mail + ", telephone=" + telephone + ", client_demandeur="
-				+ client_demandeur + "]";
+		return "DevisEntity [id=" + id + ", date_debut_travaux="
+				+ date_debut_travaux + ", domaine=" + domaine + ", titre="
+				+ titre + ", description=" + description + ", delai=" + delai
+				+ ", budget=" + budget + ", adresse=" + adresse + ", nom="
+				+ nom + ", prenom=" + prenom + ", mail=" + mail
+				+ ", telephone=" + telephone + ", client_demandeur="
+				+ client_demandeur + ", ouvrier_choisi=" + ouvrier_choisi
+				+ ", prixTTC=" + prixTTC + ", accepter=" + accepter + "]";
 	}
+
 	
 	
 	

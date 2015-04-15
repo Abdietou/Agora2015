@@ -6,8 +6,12 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 import util.HibernateUtil;
+import Modele.ClientInscriptionEntity;
 import Modele.DemandeDevisClientEntity;
+import Modele.DevisEntity;
 import Modele.InternauteEntity;
+import Modele.OuvrierInscriptionEntity;
+import Modele.OuvrierInscritEntity;
 import metier.IServiceTechnique;
 
 public class ServiceTechniqueImpl implements IServiceTechnique {
@@ -30,6 +34,54 @@ public class ServiceTechniqueImpl implements IServiceTechnique {
 		List<DemandeDevisClientEntity> client=req.list();
 		session.getTransaction().commit();
 		return client;
+	}
+
+	@Override
+	public void EditerDevis(DevisEntity d) {
+		Session session =HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		try {
+			session.save(d);
+		} catch (Exception e) {
+			session.getTransaction().rollback();
+			e.printStackTrace();
+		}
+		session.getTransaction().commit();
+		
+	}
+
+	@Override
+	public List<OuvrierInscritEntity> listOuvrier() {
+		Session session=HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		Query req=session.createQuery("select d from OuvrierInscritEntity d");
+		List<OuvrierInscritEntity> devis=req.list();
+		session.getTransaction().commit();
+		return devis;
+	}
+
+	@Override
+	public DemandeDevisClientEntity getDemDeviClient(Long id) {
+		Session session=HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		Object sc=session.get(DemandeDevisClientEntity.class, id);
+		if(sc==null) throw new RuntimeException("Client Introuvable");
+		session.getTransaction().commit();
+		return (DemandeDevisClientEntity)sc;
+	}
+
+	@Override
+	public void CreerDevis(DevisEntity devis) {
+		Session session =HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		try {
+			session.save(devis);
+		} catch (Exception e) {
+			session.getTransaction().rollback();
+			e.printStackTrace();
+		}
+		session.getTransaction().commit();
+		
 	}
 
 }

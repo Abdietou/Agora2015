@@ -42,10 +42,78 @@
 	<td>${c.prenom }</td>
 	<td>${c.mail }</td>
 	<td>${c.telephone }</td>
+	<td><a href="client_dem?action=edit&id=${c.id_devis }">Editer</a></td>
 	</tr>
 	</c:forEach>
 	</table>
 	</div>
+	
+	<fieldset>
+	 <legend>Edition d'un devis</legend>
+	 <label for="id_devis">ID : <span class="requis"></span></label>
+                <input type="text"  name="id_devis" disabled="disabled" value="${clientId }" size="20" maxlength="60" />
+                <br />
+	 <label for="domaine">Domaine : <span class="requis"></span></label>
+                <input type="text"  name="domaine" value="${clientDomaine }" size="20" maxlength="60" />
+                <br />
+      <label for="titre">Titre : <span class="requis"></span></label>
+                <input type="text"  name="titre" value="${clientTitre }" size="20" maxlength="60" />
+                <br />
+      <label for="description">Description : <span class="requis"></span></label>
+                <input type="text"  name="description" value="${clientDescription }" size="20" maxlength="60" />
+                <br />
+      <label for="delai">Delai : <span class="requis"></span></label>
+                <input type="text"  name="delai" value="${clientDelai }" size="20" maxlength="60" />
+                <br />
+      <label for="budget">Budget : <span class="requis"></span></label>
+                <input type="text"  name="budget" value="${clientBudget }" size="20" maxlength="60" />
+                <br />
+      <label for="adresse">Adresse : <span class="requis"></span></label>
+                <input type="text"  name="adresse" value="${clientAdresse }" size="20" maxlength="60" />
+                <br />
+      <label for="nom">Nom : <span class="requis"></span></label>
+                <input type="text"  name="nom" value="${clientNom }" size="20" maxlength="60" />
+                <br />
+      <label for="prenom">Prenom : <span class="requis"></span></label>
+                <input type="text"  name="prenom" value="${clientPrenom}" size="20" maxlength="60" />
+                <br />
+      <label for="mail">Mail : <span class="requis"></span></label>
+                <input type="text"  name="mail" value="${clientMail }" size="20" maxlength="60" />
+                <br />    
+      <label for="telephone">Telephone : <span class="requis"></span></label>
+                <input type="text"  name="telephone" value="${clientTelephone }" size="20" maxlength="60" />
+                <br />
+      <label for="idClient">ID du client demandeur : <span class="requis"></span></label>
+                <input type="text"  name="idClient" disabled="disabled" value="${clientDem }" size="20" maxlength="60" />
+                <br />
+      <label for="date">Date de début des travaux : <span class="requis"></span></label>
+                <input type="text"  name="date" disabled="disabled" value="${clientDate }" size="20" maxlength="60" />
+                <br /> 
+           
+           <tr>
+		<td class="label">Choix d'un Ouvriers Externes </td>     
+        	<select name="ListeOuvriers" >
+		<c:forEach items="${ouvrier}" var="d" varStatus="status">
+		<option value=""> </option>
+		<option value="${d.id}">${d.id} | ${d.nom} | ${d.prenom}</option>
+		</c:forEach>
+			</select>   
+			</tr>
+			<br /> 
+			
+	  <label for="prixTTC">PrixTTC : <span class="requis"></span></label>
+                <input type="text"  name="prixTTC" value="" size="20" maxlength="60" />
+                <br />
+                
+      <input type="submit"  name="action" value="creer" />
+                <br />         
+			                                                                                           
+	</fieldset>
+	
+	<fieldset>
+	
+	</fieldset>
+	
 </form>
 </body>
 </html>

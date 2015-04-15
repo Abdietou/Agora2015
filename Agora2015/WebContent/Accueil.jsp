@@ -42,7 +42,7 @@
 		                        </li>
 		                        
 		                        <li >
-		                       	 	<a  href="page_service_technique.jsp"> &nbsp Se connecter au service tecnhique</a>
+		                       	 	<a  href="page_service_technique.jsp"> &nbsp Se connecter au service technique</a>
 		                        </li>
 		                        
 		                         <li >

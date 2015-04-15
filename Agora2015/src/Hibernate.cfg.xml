@@ -43,7 +43,8 @@
            <mapping class="Modele.ServiceComptableEntity"/>
            <mapping class="Modele.ServiceMarketingEntity"/>
            <mapping class="Modele.ServiceTechniqueEntity"/>
-            <mapping class="Modele.DemandeDevisClientEntity"/>
+           <mapping class="Modele.DemandeDevisClientEntity"/>
+           <mapping class="Modele.DevisEntity"/> 
            
     </session-factory>
 </hibernate-configuration>

@@ -63,10 +63,7 @@ public class ClientInscritEntity implements Serializable {
 		this.login = login;
 		this.password = password;
 	}
-	
-	
 
-	
 
 	public Long getId() {
 		return id;
