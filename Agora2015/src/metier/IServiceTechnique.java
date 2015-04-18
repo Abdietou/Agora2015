@@ -14,6 +14,6 @@ public interface IServiceTechnique {
 	public void EditerDevis (DevisEntity d);
 	public List <OuvrierInscritEntity> listOuvrier();
 	public DemandeDevisClientEntity getDemDeviClient(Long id);
-	public void CreerDevis(DevisEntity devis);
+	public void CreerDevis(DevisEntity dev);
 
 }

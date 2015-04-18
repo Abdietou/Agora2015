@@ -5,6 +5,9 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -57,11 +60,12 @@ public class ControlAfficheDemDevisClient extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String action = request.getParameter("action");
-		HttpSession session = request.getSession();
+		
 		if(action!=null){
 			if (action.equals("edit")){
 			Long id = Long.parseLong(request.getParameter("id"));
 			DemandeDevisClientEntity d = sc.getDemDeviClient(id);
+			HttpSession session = request.getSession();
 
 			request.setAttribute("clientId", d.getId_devis());
 			request.setAttribute("clientDomaine", d.getDomaine());
@@ -75,10 +79,21 @@ public class ControlAfficheDemDevisClient extends HttpServlet {
 			request.setAttribute("clientMail", d.getMail());
 			request.setAttribute("clientTelephone", d.getTelephone());
 			request.setAttribute("clientDate", d.getDate_debut_travaux());
-			request.setAttribute("clientDem", d.getClient_demandeur().getId());
+			session.setAttribute("clientDem", d.getClient_demandeur().getId());
 			}
 			
 			else if(action.equals("creer")){
+//				String date_debut_travaux = request.getParameter("date_debut_travaux");
+//				SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+//				Date date = new Date();
+//				try {
+//					date = df.parse(date_debut_travaux);
+//				} catch (ParseException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+
+				//Long id_devis = Long.parseLong(request.getParameter("id_devis"));
 				String domaine = request.getParameter("domaine");
 				String titre = request.getParameter("titre");
 				String description = request.getParameter("description");
@@ -89,24 +104,29 @@ public class ControlAfficheDemDevisClient extends HttpServlet {
 				String prenom = request.getParameter("prenom");
 				String mail = request.getParameter("mail");
 				String telephone = request.getParameter("telephone");
-				
-				DateFormat df=new SimpleDateFormat("yyyy-MM-dd");
-				String date = request.getParameter("date");
-				Date startDate=null;
-				try {
-					startDate = df.parse(date);
-				} catch (ParseException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				
-				//ListeOuvriers
-				
 				Double prixTTC = Double.parseDouble(request.getParameter("prixTTC"));
-				ClientInscritEntity idClient = (ClientInscritEntity) request.getAttribute("clientDem");
+				
+				//ClientInscritEntity idClient2 = (ClientInscritEntity) request.getSession().getAttribute("idClient");
+				Long idClient = Long.parseLong(request.getParameter("idClient"));
+				String idClient2 = Long.toString(idClient);
+				ClientInscritEntity idClient3 = (ClientInscritEntity) request.getSession().getAttribute(idClient2);
+				request.getSession().removeAttribute(idClient2);
+				
+//				/* Alors récupération de la map des clients dans la session */
+//				HttpSession session = request.getSession();
+//				Map<Long,ClientInscritEntity> clients = (HashMap<Long,ClientInscritEntity>) session.getAttribute("client");
+//				 /* Si aucune map n'existe, alors initialisation d'une nouvelle map */
+//				if ( clients == null ) {
+//					clients = new HashMap<Long,ClientInscritEntity>();
+//				}
+//				 /* Puis ajout du client de la commande courante dans la map */
+//				clients.put(sc.getDemDeviClient(id_devis).getClient_demandeur().getId(), sc.getDemDeviClient(id_devis).getClient_demandeur());
+//				/* Et enfin (ré)enregistrement de la map en session */
+//				session.setAttribute("client", clients);
+//				ClientInscritEntity idClient = (ClientInscritEntity) session.getAttribute("client");
+//				
 				OuvrierInscritEntity ListeOuvriers = (OuvrierInscritEntity) request.getAttribute("ListeOuvriers");
-				//Long idClient = Long.parseLong(request.getParameter("idClient"));
-				sc.CreerDevis(new DevisEntity(startDate, domaine, titre, description, delai, budget, adresse, nom, prenom, mail, telephone, idClient, ListeOuvriers, prixTTC));
+				sc.CreerDevis(new DevisEntity(domaine, titre, description, delai, budget, adresse, nom, prenom, mail, telephone, idClient3, ListeOuvriers, prixTTC));
 			}
 		}
 		request.setAttribute("client", sc.listDevisClient());

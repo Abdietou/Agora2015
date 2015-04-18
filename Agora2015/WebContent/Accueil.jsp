@@ -52,6 +52,14 @@
 		                        <li >
 		                       	 	<a  href="page_service_marketing.jsp"> &nbsp Se connecter au service marketing</a>
 		                        </li>
+		                        
+		                        <li >
+		                       	 	<a  href="Auth_client.jsp"> &nbsp Se connecter en tant que client</a>
+		                        </li>
+		                        
+		                        <li >
+		                       	 	<a  href="Auth_ouvrier.jsp"> &nbsp Se connecter en tant qu'ouvrier externe</a>
+		                        </li>
 		                        		
 		  			</ul>
 		 

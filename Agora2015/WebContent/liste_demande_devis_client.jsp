@@ -51,10 +51,10 @@
 	<fieldset>
 	 <legend>Edition d'un devis</legend>
 	 <label for="id_devis">ID : <span class="requis"></span></label>
-                <input type="text"  name="id_devis" disabled="disabled" value="${clientId }" size="20" maxlength="60" />
+                ${clientId }<input type="hidden"  name="id_devis" value="${clientId }" size="20" maxlength="60" />
                 <br />
 	 <label for="domaine">Domaine : <span class="requis"></span></label>
-                <input type="text"  name="domaine" value="${clientDomaine }" size="20" maxlength="60" />
+                ${clientDomaine }<input type="hidden"  name="domaine" value="${clientDomaine }" size="20" maxlength="60" />
                 <br />
       <label for="titre">Titre : <span class="requis"></span></label>
                 <input type="text"  name="titre" value="${clientTitre }" size="20" maxlength="60" />
@@ -84,10 +84,10 @@
                 <input type="text"  name="telephone" value="${clientTelephone }" size="20" maxlength="60" />
                 <br />
       <label for="idClient">ID du client demandeur : <span class="requis"></span></label>
-                <input type="text"  name="idClient" disabled="disabled" value="${clientDem }" size="20" maxlength="60" />
+                ${clientDem }<input type="hidden" id="idClient" name="idClient" value="${clientDem }" size="20" maxlength="60" />
                 <br />
-      <label for="date">Date de début des travaux : <span class="requis"></span></label>
-                <input type="text"  name="date" disabled="disabled" value="${clientDate }" size="20" maxlength="60" />
+      <label for="date_debut_travaux">Date de début des travaux : <span class="requis"></span></label>
+                ${clientDate }<input type="hidden" id="date_debut_travaux"  name="date_debut_travaux"  value="${clientDate }" size="20" maxlength="60" />
                 <br /> 
            
            <tr>
@@ -95,7 +95,7 @@
         	<select name="ListeOuvriers" >
 		<c:forEach items="${ouvrier}" var="d" varStatus="status">
 		<option value=""> </option>
-		<option value="${d.id}">${d.id} | ${d.nom} | ${d.prenom}</option>
+		<option value="${d.id}">${d.id}--${d.nom}--${d.prenom}</option>
 		</c:forEach>
 			</select>   
 			</tr>

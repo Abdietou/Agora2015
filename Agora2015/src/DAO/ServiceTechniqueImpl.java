@@ -71,11 +71,11 @@ public class ServiceTechniqueImpl implements IServiceTechnique {
 	}
 
 	@Override
-	public void CreerDevis(DevisEntity devis) {
-		Session session =HibernateUtil.getSessionFactory().getCurrentSession();
+	public void CreerDevis(DevisEntity dev) {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
 		try {
-			session.save(devis);
+			session.save(dev);
 		} catch (Exception e) {
 			session.getTransaction().rollback();
 			e.printStackTrace();

@@ -4,12 +4,21 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.Proxy;
+
+@Entity
+@Proxy(lazy=false)
+@Table(name = "DEVIS")
 
 public class DevisEntity implements Serializable {
 	
@@ -28,12 +37,33 @@ public class DevisEntity implements Serializable {
 	private String prenom;
 	private String mail;
 	private String telephone;
-	@OneToOne 
-	@JoinColumn(name="id_client_inscrit")
+	/**
+     * Client qui a fait la demande de devis
+     */
+	@OneToOne (fetch = FetchType.LAZY)
+	@JoinTable(name = "client_inscrit",
+	joinColumns = {
+@JoinColumn(name="id_devis_etabli", unique=true)
+	},
+	inverseJoinColumns = {
+    @JoinColumn(name="id_client_inscrit")
+}
+)
 	private ClientInscritEntity client_demandeur;
-	@OneToOne 
-	@JoinColumn(name="id_ouvrier_inscrit")
+	/**
+     * Liste des ouvriers inscrit
+     */
+	@OneToOne (fetch = FetchType.LAZY)
+	@JoinTable(name = "ouvrier_inscrit",
+			joinColumns = {
+	@JoinColumn(name="id_devis_etabli", unique=true)
+			},
+			inverseJoinColumns = {
+            @JoinColumn(name="id_ouvrier_inscrit")
+        }
+    )
 	private OuvrierInscritEntity ouvrier_choisi;
+	
 	private Double prixTTC;
 	private boolean accepter;
 	
@@ -66,6 +96,28 @@ public class DevisEntity implements Serializable {
 	}
 
 
+
+
+	public DevisEntity(String domaine, String titre, String description,
+			String delai, String budget, String adresse, String nom,
+			String prenom, String mail, String telephone,
+			ClientInscritEntity client_demandeur, OuvrierInscritEntity ouvrier_choisi,
+			Double prixTTC) {
+		super();
+		this.domaine = domaine;
+		this.titre = titre;
+		this.description = description;
+		this.delai = delai;
+		this.budget = budget;
+		this.adresse = adresse;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.mail = mail;
+		this.telephone = telephone;
+		this.client_demandeur = client_demandeur;
+		this.ouvrier_choisi = ouvrier_choisi;
+		this.prixTTC = prixTTC;
+	}
 
 
 	public Long getId() {
