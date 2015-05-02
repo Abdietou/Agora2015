@@ -42,7 +42,7 @@
 	<td>${c.prenom }</td>
 	<td>${c.mail }</td>
 	<td>${c.telephone }</td>
-	<td><a href="client_dem?action=edit&id=${c.id_devis }">Editer</a></td>
+	<td><a href="client_dem?action=edit&id_devis=${c.id_devis }">Editer</a></td>
 	</tr>
 	</c:forEach>
 	</table>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -18,19 +18,19 @@
 function verif(f)
 {
 	if(!date_debut_travaux.value){
-			alert("Indiquer votre date de disponibilitÈ !");return false;}
+			alert("Indiquer votre date de disponibilit√© !");return false;}
 	if(!domaine.value){
-		alert("Indiquer votre domaine de compÈtence !");return false;}
+		alert("Indiquer votre domaine de comp√©tence !");return false;}
 	if(!titre.value){
 		alert("Indiquer le titre de votre demande !");return false;}
 	if(!delai.value){
-		alert("Indiquer votre dÈlai !");return false;}
+		alert("Indiquer votre d√©lai !");return false;}
 	if(!budget.value){
 		alert("Indiquer votre budget !");return false;}
 	if(isNaN(f.budget.value) == true){
 			alert("Votre budget n'est pas correct !");return false;}
 	if(!adresse.value){
-		alert("Indiquer votre adresse complËte !");return false;}
+		alert("Indiquer votre adresse compl√®te !");return false;}
 	if(!f.nom.value){
 			alert("Indiquer votre nom !");return false;}
 	if (!f.prenom.value){
@@ -40,11 +40,11 @@ function verif(f)
 	if (!f.mail.value){
         alert("Indiquer votre adresse mail !");return false;}
 	if(f.telephone.value.length<10 || (isNaN(f.telephone.value) == true)){
-		 alert("Entrez un numÈro de tÈlÈphone correct ‡ 10 chiffres");return false;}
+		 alert("Entrez un num√©ro de t√©l√©phone correct √† 10 chiffres");return false;}
 	if(!f.mail.value.match(/[a-z0-9_\-\.]+@[a-z0-9_\-\.]+\.[a-z]+/i)) {
 	    alert(f.mail.value + " n'est pas une adresse valide");return false;}
 	else
-		alert("Votre demande de devis sera traitÈ par le service technique !");
+		alert("Votre demande de devis sera trait√© par le service technique !");
 		return true; 
 	}
 </script>
@@ -53,7 +53,7 @@ function verif(f)
 <td colspan="2">     
            
 
-<h4 class="heading"><div>Travaux ‡ rÈaliser</div></h4>
+<h4 class="heading"><div>Travaux √† r√©aliser</div></h4>
 
 
 </td>
@@ -65,7 +65,7 @@ function verif(f)
 
 <div class="hiddenQ">
 
- <label for="date_debut_travaux">Date de dÈbut des travaux <span class="requis"></span></label>
+ <label for="date_debut_travaux">Date de d√©but des travaux <span class="requis"></span></label>
                 <input type="date" name="date_debut_travaux" value=""  />
                   <br />
                   
@@ -75,11 +75,11 @@ function verif(f)
 <td class="field">
 <select name="domaine" id="domaine" class="domaine">
 <option value =""> </option>
-<option value="Travaux divers, rÈnovation, amÈnagement">Travaux divers, rÈnovation, amÈnagement</option>
+<option value="Travaux divers, r√©novation, am√©nagement">Travaux divers, r√©novation, am√©nagement</option>
 <option value="Construction, agrandissement">Construction, agrandissement</option>
-<option value="RÈnovation totale, tous corps d'Ètat">RÈnovation totale, tous corps d'Ètat</option>
-<option value="Diagnostics du b‚timent">Diagnostics du b‚timent</option>
-<option value="ExtÈrieur, voirie, jardin">ExtÈrieur, voirie, jardin</option>
+<option value="R√©novation totale, tous corps d'√©tat">R√©novation totale, tous corps d'√©tat</option>
+<option value="Diagnostics du b√¢timent">Diagnostics du b√¢timent</option>
+<option value="Ext√©rieur, voirie, jardin">Ext√©rieur, voirie, jardin</option>
 </select>
 </td>
 <td id="sousDomaine1_inf" class="warn"> </td>
@@ -98,7 +98,7 @@ function verif(f)
                     </tr>
                     
                     <tr class="corpsDemande">
-                        <td class="label">Description des t‚ches ‡ rÈaliser ( donner toutes les prÈcisions utiles : dimensions, Ètat ... )<div class="important">*</div></td>
+                        <td class="label">Description des t√¢ches √† r√©aliser ( donner toutes les pr√©cisions utiles : dimensions, √©tat ... )<div class="important">*</div></td>
                         <td class="field">
                            
                            <textarea name="description"   rows="12" cols="45" wrap="hard" id="description"></textarea>
@@ -109,7 +109,7 @@ function verif(f)
 <tr>
 <td colspan="2">                
 
-<h4 class="heading"><div>Informations complÈmentaires</div></h4>
+<h4 class="heading"><div>Informations compl√©mentaires</div></h4>
 
 </td>
 </tr>
@@ -117,14 +117,14 @@ function verif(f)
 
                     
                     <tr class="delaisPrestationId">
-                        <td class="label">DÈlai de rÈalisation souhaitÈ <div class="important">*</div></td>
+                        <td class="label">D√©lai de r√©alisation souhait√© <div class="important">*</div></td>
                         <td >
                            
                            
 								  
                                   <select name="delai" id="delai">
 <option value=""> </option>
-<option value="DËs que possible">DËs que possible</option>
+<option value="D√®s que possible">D√®s que possible</option>
 <option value="3 mois">D&#39;ici 3 mois</option>
 <option value="6 mois">D&#39;ici 6 mois</option>
 <option value="plus de 6 mois">Dans plus de 6 mois</option>
@@ -151,7 +151,7 @@ function verif(f)
 </tr>
 
 	<tr class="adresseRue">
-										<td class="label">Adresse ComplËte <div class="important">*</div></td>
+										<td class="label">Adresse Compl√®te <div class="important">*</div></td>
 										<td class="field">
 											
 											<input type="text" name="adresse" value=""   size="50" id="adresse"/>
@@ -161,7 +161,7 @@ function verif(f)
 									
 			<tr>
 <td colspan="2">                
-<h4 class="heading"><div>Vos coordonnÈes</div></h4>
+<h4 class="heading"><div>Vos coordonn√©es</div></h4>
 </td>
 </tr>
 
@@ -176,7 +176,7 @@ function verif(f)
                     <td class="label" colspan="3">
                     <BLOCKQUOTE>
     			<p class="explication" id="explication">
-    				<i>Seul les utilisateurs du systËme agora auront accËs ‡ vos coordonnÈes et au lieu prÈcis des travaux, selon votre choix (voir plus haut).</i>
+    				<i>Seul les utilisateurs du syst√®me agora auront acc√®s √† vos coordonn√©es et au lieu pr√©cis des travaux, selon votre choix (voir plus haut).</i>
     			</p>
     		    </BLOCKQUOTE>
                     </td>
@@ -191,7 +191,7 @@ function verif(f)
                         <td id="nom_inf" class="warn"> </td>
                     </tr>
                     <tr class="prenom">
-                        <td class="label">PrÈnom <div class="important">*</div></td>
+                        <td class="label">Pr√©nom <div class="important">*</div></td>
                         <td class="field">
                            
                            <input type="text" name="prenom" value=""   id="prenom"/>
@@ -208,7 +208,7 @@ function verif(f)
                         <td id="email_inf" class="warn"> </td>
                     </tr>
                     <tr class="numeroDeTelephone">
-                        <td class="label">TÈlÈphone<div class="important">*</div></td>
+                        <td class="label">T√©l√©phone<div class="important">*</div></td>
                         <td class="field">
                            
                            <input type="text" name="telephone" value=""   size="22" id="telephone"/>

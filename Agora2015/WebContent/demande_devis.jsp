@@ -1,30 +1,74 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<form method="post" action="internaute" onsubmit="return verif(this)">
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="bgMax.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen">
+		<script src="js/jquery-1.6.3.min.js" type="text/javascript"></script>
+		<script src="js/cufon-yui.js" type="text/javascript"></script>
+		<script src="js/cufon-replace.js" type="text/javascript"></script>
+		<script src="js/NewsGoth_BT_400.font.js" type="text/javascript"></script>
+		<script src="js/FF-cash.js" type="text/javascript"></script>
+		<script src="js/script.js" type="text/javascript"></script>
+		<script src="js/jquery.equalheights.js" type="text/javascript"></script>
+		<script src="js/jquery.easing.1.3.js" type="text/javascript"></script>
+		<script src="js/tms-0.3.js" type="text/javascript"></script>
+		<script src="js/tms_presets.js" type="text/javascript"></script>
+		<script src="js/easyTooltip.js" type="text/javascript"></script>
 <title>Demande de devis</title>
+<link type="text/css" rel="stylesheet" href="css/structure_formulaire_inscription_client.css" />
 </head>
-<body>
+<body id="page1">
+<div class="extra">
+			<div class="main">
+			<!--==============================header=================================-->
+				<header>
+				<div class="indent">
+				<div class="row-top">
+				<div class="wrapper">
+				<h1><a href="Accueil.jsp">SystÃ¨me Agora</a></h1>
+				<strong class="support">+1 959-456-7856</strong>
+				</div>
+				</div>
+				<nav>
+				<ul class="menu">
+				<li><a class="active" href="Accueil.jsp">Acceuil</a></li>
+				<li><a href="formulaire_inscription_client.jsp">Inscription Client</a></li>
+				<li><a href="formulaire_inscription_ouvrier.jsp">Inscription Ouvrier</a></li>
+				<li><a href="/Agora2015/agent">Connexion agent administratif</a></li>
+				<li><a href="page_service_technique.jsp">Service Technique</a></li>
+				<li><a href="page_service_comptable.jsp">Service Comptable</a></li>
+				<li><a href="page_service_marketing.jsp">Service Marketing</a></li>
+				<li><a href="Auth_client.jsp">Connexion Client</a></li>
+				<li><a href="Auth_ouvrier.jsp">Connexion Ouvrier</a></li>
+				<li><a href="demande_devis.jsp">Demande de devis</a></li>
+				</ul>
+				</nav>
+				</div>
+				</header>
+				
 <script language="javascript" >
 function verif(f)
 {
 	if(!date_debut_travaux.value){
-			alert("Indiquer votre date de disponibilité !");return false;}
+			alert("Indiquer votre date de disponibilitÃ© !");return false;}
 	if(!domaine.value){
-		alert("Indiquer votre domaine de compétence !");return false;}
+		alert("Indiquer votre domaine de compÃ©tence !");return false;}
 	if(!titre.value){
 		alert("Indiquer le titre de votre demande !");return false;}
 	if(!delai.value){
-		alert("Indiquer votre délai !");return false;}
+		alert("Indiquer votre dÃ©lai !");return false;}
 	if(!budget.value){
 		alert("Indiquer votre budget !");return false;}
 	if(isNaN(f.budget.value) == true){
 			alert("Votre budget n'est pas correct !");return false;}
 	if(!adresse.value){
-		alert("Indiquer votre adresse complète !");return false;}
+		alert("Indiquer votre adresse complÃ¨te !");return false;}
 	if(!f.nom.value){
 			alert("Indiquer votre nom !");return false;}
 	if (!f.prenom.value){
@@ -34,20 +78,22 @@ function verif(f)
 	if (!f.mail.value){
         alert("Indiquer votre adresse mail !");return false;}
 	if(f.telephone.value.length<10 || (isNaN(f.telephone.value) == true)){
-		 alert("Entrez un numéro de téléphone correct à 10 chiffres");return false;}
+		 alert("Entrez un numÃ©ro de tÃ©lÃ©phone correct Ã  10 chiffres");return false;}
 	if(!f.mail.value.match(/[a-z0-9_\-\.]+@[a-z0-9_\-\.]+\.[a-z]+/i)) {
 	    alert(f.mail.value + " n'est pas une adresse valide");return false;}
 	else
-		alert("Votre demande de devis sera traité par le service technique !");
+		alert("Votre demande de devis sera traitÃ© par le service technique !");
 		return true; 
 	}
 </script>
+
+<form method="post" action="internaute" onsubmit="return verif(this)">
 
 <tr>
 <td colspan="2">     
            
 
-<h4 class="heading"><div>Travaux à réaliser</div></h4>
+<h4 class="heading"><div>Travaux Ã  rÃ©aliser</div></h4>
 
 
 </td>
@@ -60,11 +106,11 @@ function verif(f)
 <td class="field">
 <select name="domaine" id="domaine" class="domaine">
 <option value =""> </option>
-<option value="Travaux divers, rénovation, aménagement">Travaux divers, rénovation, aménagement</option>
+<option value="Travaux divers, rÃ©novation, amÃ©nagement">Travaux divers, rÃ©novation, amÃ©nagement</option>
 <option value="Construction, agrandissement">Construction, agrandissement</option>
-<option value="Rénovation totale, tous corps d'état">Rénovation totale, tous corps d'état</option>
-<option value="Diagnostics du bâtiment">Diagnostics du bâtiment</option>
-<option value="Extérieur, voirie, jardin">Extérieur, voirie, jardin</option>
+<option value="RÃ©novation totale, tous corps d'Ã©tat">RÃ©novation totale, tous corps d'Ã©tat</option>
+<option value="Diagnostics du bÃ¢timent">Diagnostics du bÃ¢timent</option>
+<option value="ExtÃ©rieur, voirie, jardin">ExtÃ©rieur, voirie, jardin</option>
 </select>
 </td>
 <td id="sousDomaine1_inf" class="warn"> </td>
@@ -83,7 +129,7 @@ function verif(f)
                     </tr>
                     
                     <tr class="corpsDemande">
-                        <td class="label">Description des tâches à réaliser ( donner toutes les précisions utiles : dimensions, état ... )<div class="important">*</div></td>
+                        <td class="label">Description des tÃ¢ches Ã  rÃ©aliser ( donner toutes les prÃ©cisions utiles : dimensions, Ã©tat ... )<div class="important">*</div></td>
                         <td class="field">
                            
                            <textarea name="description"   rows="12" cols="45" wrap="hard" id="description"></textarea>
@@ -94,7 +140,7 @@ function verif(f)
 <tr>
 <td colspan="2">                
 
-<h4 class="heading"><div>Informations complémentaires</div></h4>
+<h4 class="heading"><div>Informations complÃ©mentaires</div></h4>
 
 </td>
 </tr>
@@ -102,14 +148,14 @@ function verif(f)
 
                     
                     <tr class="delaisPrestationId">
-                        <td class="label">Délai de réalisation souhaité <div class="important">*</div></td>
+                        <td class="label">DÃ©lai de rÃ©alisation souhaitÃ© <div class="important">*</div></td>
                         <td >
                            
                            
 								  
                                   <select name="delai" id="delai">
 <option value=""> </option>
-<option value="Dès que possible">Dès que possible</option>
+<option value="DÃ¨s que possible">DÃ¨s que possible</option>
 <option value="3 mois">D&#39;ici 3 mois</option>
 <option value="6 mois">D&#39;ici 6 mois</option>
 <option value="plus de 6 mois">Dans plus de 6 mois</option>
@@ -136,7 +182,7 @@ function verif(f)
 </tr>
 
 	<tr class="adresseRue">
-										<td class="label">Adresse Complète <div class="important">*</div></td>
+										<td class="label">Adresse ComplÃ¨te <div class="important">*</div></td>
 										<td class="field">
 											
 											<input type="text" name="adresse" value=""   size="50" id="adresse"/>
@@ -146,7 +192,7 @@ function verif(f)
 									
 			<tr>
 <td colspan="2">                
-<h4 class="heading"><div>Vos coordonnées</div></h4>
+<h4 class="heading"><div>Vos coordonnÃ©es</div></h4>
 </td>
 </tr>
 
@@ -161,7 +207,7 @@ function verif(f)
                     <td class="label" colspan="3">
                     <BLOCKQUOTE>
     			<p class="explication" id="explication">
-    				<i>Seul les utilisateurs du système agora auront accès à vos coordonnées et au lieu précis des travaux, selon votre choix (voir plus haut).</i>
+    				<i>Seul les utilisateurs du systÃ¨me agora auront accÃ¨s Ã  vos coordonnÃ©es et au lieu prÃ©cis des travaux, selon votre choix (voir plus haut).</i>
     			</p>
     		    </BLOCKQUOTE>
                     </td>
@@ -176,7 +222,7 @@ function verif(f)
                         <td id="nom_inf" class="warn"> </td>
                     </tr>
                     <tr class="prenom">
-                        <td class="label">Prénom <div class="important">*</div></td>
+                        <td class="label">PrÃ©nom <div class="important">*</div></td>
                         <td class="field">
                            
                            <input type="text" name="prenom" value=""   id="prenom"/>
@@ -193,7 +239,7 @@ function verif(f)
                         <td id="email_inf" class="warn"> </td>
                     </tr>
                     <tr class="numeroDeTelephone">
-                        <td class="label">Téléphone<div class="important">*</div></td>
+                        <td class="label">TÃ©lÃ©phone<div class="important">*</div></td>
                         <td class="field">
                            
                            <input type="text" name="telephone" value=""   size="22" id="telephone"/>
@@ -212,5 +258,7 @@ function verif(f)
 			
 	
 </form>
+</div>
+</div>
 </body>
 </html>

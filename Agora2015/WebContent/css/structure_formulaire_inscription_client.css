@@ -1,6 +1,6 @@
-@CHARSET "ISO-8859-1";
+@CHARSET "utf-8";
 
-/* Général ------------------------------------------------------------------------------------- */
+/* GÃ©nÃ©ral ------------------------------------------------------------------------------------- */
 
 body, p, legend, label, input {
     font: normal 8pt verdana, helvetica, sans-serif;
@@ -8,12 +8,12 @@ body, p, legend, label, input {
 
 fieldset {
     padding: 10px;
-    border: 1px #0568CD solid;
+    border: 1px #000000 solid;
 }
 
 legend {
     font-weight: bold;
-    color: #0568CD;
+    color: #000000;
 }
 
 /* Forms --------------------------------------------------------------------------------------- */

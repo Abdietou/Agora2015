@@ -26,6 +26,11 @@ public class ClientInscriptionEntity implements Serializable {
 	private String login;
 	private String password;
 	
+	public ClientInscriptionEntity() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 
 	public ClientInscriptionEntity(String nom, String prenom, String adresse,
 			String ville, String code_postal, String telephone, String mail,
@@ -58,13 +63,6 @@ public class ClientInscriptionEntity implements Serializable {
 		this.mail = mail;
 		this.login = login;
 		this.password = password;
-	}
-
-
-
-	public ClientInscriptionEntity() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Long getId() {

@@ -2,6 +2,8 @@ package Modele;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -49,7 +51,7 @@ public class DevisEntity implements Serializable {
     @JoinColumn(name="id_client_inscrit")
 }
 )
-	private ClientInscritEntity client_demandeur;
+	private ClientInscritEntity id_client_inscrit;
 	/**
      * Liste des ouvriers inscrit
      */
@@ -71,38 +73,12 @@ public class DevisEntity implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	public DevisEntity(Date date_debut_travaux, String domaine, String titre,
-			String description, String delai, String budget, String adresse,
-			String nom, String prenom, String mail, String telephone,
-			ClientInscritEntity client_demandeur,
-			OuvrierInscritEntity ouvrier_choisi, Double prixTTC) {
-		super();
-		this.date_debut_travaux = date_debut_travaux;
-		this.domaine = domaine;
-		this.titre = titre;
-		this.description = description;
-		this.delai = delai;
-		this.budget = budget;
-		this.adresse = adresse;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.mail = mail;
-		this.telephone = telephone;
-		this.client_demandeur = client_demandeur;
-		this.ouvrier_choisi = ouvrier_choisi;
-		this.prixTTC = prixTTC;
-	}
-
-
-
 
 	public DevisEntity(String domaine, String titre, String description,
 			String delai, String budget, String adresse, String nom,
 			String prenom, String mail, String telephone,
-			ClientInscritEntity client_demandeur, OuvrierInscritEntity ouvrier_choisi,
-			Double prixTTC) {
+			ClientInscritEntity id_client_inscrit,
+			OuvrierInscritEntity ouvrier_choisi, Double prixTTC) {
 		super();
 		this.domaine = domaine;
 		this.titre = titre;
@@ -114,7 +90,7 @@ public class DevisEntity implements Serializable {
 		this.prenom = prenom;
 		this.mail = mail;
 		this.telephone = telephone;
-		this.client_demandeur = client_demandeur;
+		this.id_client_inscrit = id_client_inscrit;
 		this.ouvrier_choisi = ouvrier_choisi;
 		this.prixTTC = prixTTC;
 	}
@@ -216,12 +192,12 @@ public class DevisEntity implements Serializable {
 		this.telephone = telephone;
 	}
 
-	public ClientInscritEntity getClient_demandeur() {
-		return client_demandeur;
+	public ClientInscritEntity getId_client_inscrit() {
+		return id_client_inscrit;
 	}
 
-	public void setClient_demandeur(ClientInscritEntity client_demandeur) {
-		this.client_demandeur = client_demandeur;
+	public void setId_client_inscrit(ClientInscritEntity id_client_inscrit) {
+		this.id_client_inscrit = id_client_inscrit;
 	}
 
 	public OuvrierInscritEntity getOuvrier_choisi() {
@@ -249,16 +225,34 @@ public class DevisEntity implements Serializable {
 	}
 
 	@Override
-	public String toString() {
-		return "DevisEntity [id=" + id + ", date_debut_travaux="
-				+ date_debut_travaux + ", domaine=" + domaine + ", titre="
-				+ titre + ", description=" + description + ", delai=" + delai
-				+ ", budget=" + budget + ", adresse=" + adresse + ", nom="
-				+ nom + ", prenom=" + prenom + ", mail=" + mail
-				+ ", telephone=" + telephone + ", client_demandeur="
-				+ client_demandeur + ", ouvrier_choisi=" + ouvrier_choisi
-				+ ", prixTTC=" + prixTTC + ", accepter=" + accepter + "]";
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime
+				* result
+				+ ((id_client_inscrit == null) ? 0 : id_client_inscrit
+						.hashCode());
+		return result;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DevisEntity other = (DevisEntity) obj;
+		if (id_client_inscrit == null) {
+			if (other.id_client_inscrit != null)
+				return false;
+		} else if (!id_client_inscrit.equals(other.id_client_inscrit))
+			return false;
+		return true;
+	}
+
+	
 
 	
 	

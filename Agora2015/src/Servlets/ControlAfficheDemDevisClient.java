@@ -63,8 +63,8 @@ public class ControlAfficheDemDevisClient extends HttpServlet {
 		
 		if(action!=null){
 			if (action.equals("edit")){
-			Long id = Long.parseLong(request.getParameter("id"));
-			DemandeDevisClientEntity d = sc.getDemDeviClient(id);
+			Long id_devis = Long.parseLong(request.getParameter("id_devis"));
+			DemandeDevisClientEntity d = sc.getDemDeviClient(id_devis);
 			HttpSession session = request.getSession();
 
 			request.setAttribute("clientId", d.getId_devis());
@@ -80,6 +80,7 @@ public class ControlAfficheDemDevisClient extends HttpServlet {
 			request.setAttribute("clientTelephone", d.getTelephone());
 			request.setAttribute("clientDate", d.getDate_debut_travaux());
 			session.setAttribute("clientDem", d.getClient_demandeur().getId());
+			session.setAttribute("cl", d.getClient_demandeur());
 			}
 			
 			else if(action.equals("creer")){
@@ -93,7 +94,7 @@ public class ControlAfficheDemDevisClient extends HttpServlet {
 //					e.printStackTrace();
 //				}
 
-				//Long id_devis = Long.parseLong(request.getParameter("id_devis"));
+				Long id_devis = Long.parseLong(request.getParameter("id_devis"));
 				String domaine = request.getParameter("domaine");
 				String titre = request.getParameter("titre");
 				String description = request.getParameter("description");
@@ -107,26 +108,26 @@ public class ControlAfficheDemDevisClient extends HttpServlet {
 				Double prixTTC = Double.parseDouble(request.getParameter("prixTTC"));
 				
 				//ClientInscritEntity idClient2 = (ClientInscritEntity) request.getSession().getAttribute("idClient");
-				Long idClient = Long.parseLong(request.getParameter("idClient"));
-				String idClient2 = Long.toString(idClient);
-				ClientInscritEntity idClient3 = (ClientInscritEntity) request.getSession().getAttribute(idClient2);
-				request.getSession().removeAttribute(idClient2);
+//				Long idClient = Long.parseLong(request.getParameter("idClient"));
+//				String idClient2 = Long.toString(idClient);
+//				ClientInscritEntity idClient3 = (ClientInscritEntity) request.getSession().getAttribute(idClient2);
+//				request.getSession().removeAttribute(idClient2);
 				
-//				/* Alors récupération de la map des clients dans la session */
-//				HttpSession session = request.getSession();
-//				Map<Long,ClientInscritEntity> clients = (HashMap<Long,ClientInscritEntity>) session.getAttribute("client");
-//				 /* Si aucune map n'existe, alors initialisation d'une nouvelle map */
-//				if ( clients == null ) {
-//					clients = new HashMap<Long,ClientInscritEntity>();
-//				}
-//				 /* Puis ajout du client de la commande courante dans la map */
-//				clients.put(sc.getDemDeviClient(id_devis).getClient_demandeur().getId(), sc.getDemDeviClient(id_devis).getClient_demandeur());
-//				/* Et enfin (ré)enregistrement de la map en session */
-//				session.setAttribute("client", clients);
-//				ClientInscritEntity idClient = (ClientInscritEntity) session.getAttribute("client");
-//				
+				/* Alors récupération de la map des clients dans la session */
+				HttpSession session = request.getSession();
+				
+				Map<Long, ClientInscritEntity> clients = (HashMap<Long, ClientInscritEntity>) session.getAttribute("cl");
+				 /* Si aucune map n'existe, alors initialisation d'une nouvelle map */
+				if ( clients == null ) {
+					clients = new HashMap<Long, ClientInscritEntity>();
+				}
+				 /* Puis ajout du client de la commande courante dans la map */
+				clients.put(sc.getDemDeviClient(id_devis).getClient_demandeur().getId(), sc.getDemDeviClient(id_devis).getClient_demandeur());
+				/* Et enfin (ré)enregistrement de la map en session */
+				session.setAttribute("cl", clients);
+				ClientInscritEntity idClient = (ClientInscritEntity) session.getAttribute("cl");
 				OuvrierInscritEntity ListeOuvriers = (OuvrierInscritEntity) request.getAttribute("ListeOuvriers");
-				sc.CreerDevis(new DevisEntity(domaine, titre, description, delai, budget, adresse, nom, prenom, mail, telephone, idClient3, ListeOuvriers, prixTTC));
+				sc.CreerDevis(new DevisEntity(domaine, titre, description, delai, budget, adresse, nom, prenom, mail, telephone, idClient, ListeOuvriers, prixTTC));
 			}
 		}
 		request.setAttribute("client", sc.listDevisClient());
