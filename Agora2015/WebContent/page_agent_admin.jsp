@@ -23,7 +23,36 @@
 		<script src="js/easyTooltip.js" type="text/javascript"></script>
 <title>Acceuil Agent Administratif</title>
 <link rel="stylesheet" type="text/css" href="css/tab_client.css"/>
-
+</head>
+<body id="page1">
+<div class="extra">
+			<div class="main">
+			<!--==============================header=================================-->
+				<header>
+				<div class="indent">
+				<div class="row-top">
+				<div class="wrapper">
+				<h1><a href="Accueil.jsp">Système Agora</a></h1>
+				<strong class="support">+1 959-456-7856</strong>
+				</div>
+				</div>
+				<nav>
+				<ul class="menu">
+				<li><a class="active" href="Accueil.jsp">Acceuil</a></li>
+				<li><a href="formulaire_inscription_client.jsp">Inscription Client</a></li>
+				<li><a href="formulaire_inscription_ouvrier.jsp">Inscription Ouvrier</a></li>
+				<li><a href="/Agora2015/agent">Connexion agent administratif</a></li>
+				<li><a href="page_service_technique.jsp">Service Technique</a></li>
+				<li><a href="page_service_comptable.jsp">Service Comptable</a></li>
+				<li><a href="page_service_marketing.jsp">Service Marketing</a></li>
+				<li><a href="Auth_client.jsp">Connexion Client</a></li>
+				<li><a href="Auth_ouvrier.jsp">Connexion Ouvrier</a></li>
+				<li><a href="demande_devis.jsp">Demande de devis</a></li>
+				</ul>
+				</nav>
+				</div>
+				</header>
+				
 <script type="text/javascript">
 function confirmation(id){
 	var conf=confirm("Êtes vous sûre de vouloir supprimer cette demande d'inscription client ?");
@@ -55,36 +84,6 @@ function confirmation4(id){
 		document.location="agent?action=ajouter2&id="+id;
 }
 </script>
-
-</head>
-<body id="page1">
-<div class="extra">
-			<div class="main">
-			<!--==============================header=================================-->
-				<header>
-				<div class="indent">
-				<div class="row-top">
-				<div class="wrapper">
-				<h1><a href="Accueil.jsp">Système Agora</a></h1>
-				<strong class="support">+1 959-456-7856</strong>
-				</div>
-				</div>
-				<nav>
-				<ul class="menu">
-				<li><a class="active" href="Accueil.jsp">Acceuil</a></li>
-				<li><a href="formulaire_inscription_client.jsp">Inscription Client</a></li>
-				<li><a href="formulaire_inscription_ouvrier.jsp">Inscription Ouvrier</a></li>
-				<li><a href="/Agora2015/agent">Connexion agent administratif</a></li>
-				<li><a href="page_service_technique.jsp">Service Technique</a></li>
-				<li><a href="page_service_comptable.jsp">Service Comptable</a></li>
-				<li><a href="page_service_marketing.jsp">Service Marketing</a></li>
-				<li><a href="Auth_client.jsp">Connexion Client</a></li>
-				<li><a href="Auth_ouvrier.jsp">Connexion Ouvrier</a></li>
-				<li><a href="demande_devis.jsp">Demande de devis</a></li>
-				</ul>
-				</nav>
-				</div>
-				</header>
 
 
 <h3>Demande d'inscription des clients</h3>
@@ -150,6 +149,8 @@ function confirmation4(id){
 		</c:forEach>
 	</table>
 	
+</div>
+</div>
 </div>
 </body>
 </html>

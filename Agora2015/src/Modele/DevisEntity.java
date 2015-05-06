@@ -42,15 +42,15 @@ public class DevisEntity implements Serializable {
 	/**
      * Client qui a fait la demande de devis
      */
-	@OneToOne (fetch = FetchType.LAZY)
-	@JoinTable(name = "client_inscrit",
-	joinColumns = {
-@JoinColumn(name="id_devis_etabli", unique=true)
-	},
-	inverseJoinColumns = {
-    @JoinColumn(name="id_client_inscrit")
-}
-)
+//	@OneToOne (fetch = FetchType.LAZY)
+//	@JoinTable(name = "client_inscrit",
+//	joinColumns = {
+//@JoinColumn(name="id_devis_etabli", unique=true)
+//	},
+//	inverseJoinColumns = {
+//    @JoinColumn(name="id_client_inscrit")
+//}
+//)
 	private ClientInscritEntity id_client_inscrit;
 	/**
      * Liste des ouvriers inscrit

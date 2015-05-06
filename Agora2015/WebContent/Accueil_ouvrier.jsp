@@ -1,13 +1,28 @@
 <%@page import="Modele.OuvrierInscritEntity"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="utf-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <form method="post" action="modif" onsubmit="return verif(this)">
 <link rel="stylesheet" type="text/css" href="css/tab_client.css"/>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="bgMax.min.js" type="text/javascript"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen">
+		<script src="js/jquery-1.6.3.min.js" type="text/javascript"></script>
+		<script src="js/cufon-yui.js" type="text/javascript"></script>
+		<script src="js/cufon-replace.js" type="text/javascript"></script>
+		<script src="js/NewsGoth_BT_400.font.js" type="text/javascript"></script>
+		<script src="js/FF-cash.js" type="text/javascript"></script>
+		<script src="js/script.js" type="text/javascript"></script>
+		<script src="js/jquery.equalheights.js" type="text/javascript"></script>
+		<script src="js/jquery.easing.1.3.js" type="text/javascript"></script>
+		<script src="js/tms-0.3.js" type="text/javascript"></script>
+		<script src="js/tms_presets.js" type="text/javascript"></script>
+		<script src="js/easyTooltip.js" type="text/javascript"></script>
 <title>Acceuil Ouvrier</title>
 <script type="text/javascript">
 function verif(f)
@@ -21,7 +36,7 @@ function verif(f)
 		if(isNaN(f.prix.value) == true){
 			alert("Votre tarif horaire n'est pas correct");return false;}
 		if (!f.disponibilite.value){
-	        alert("Indiquer votre disponibilitÈ");return false;}
+	        alert("Indiquer votre disponibilit√©");return false;}
 		if (!f.prestation.value){
 	        alert("Indiquer vos prestations");return false;}
 		if (!f.login.value){
@@ -31,17 +46,41 @@ function verif(f)
 		if(f.password.value != f.password2.value){
 			 alert("Vos mots de passe ne correspondent pas");return false;}
 		if(f.password.value.length<3 ){
-			 alert("Votre mot de passe doit contenir au minimum 3 caractËres");return false;}
+			 alert("Votre mot de passe doit contenir au minimum 3 caract√®res");return false;}
 		if(f.password.value != f.password2.value){
 			 alert("Vos mots de passe ne correspondent pas !");return false;}
 		else
-			alert("Vos Modifications ont ÈtÈs prise en compte");
+			alert("Vos Modifications ont √©t√©s prise en compte");
 		return true;
 		}
 </script>
 </head>
 
-<body>
+<body id="page1">
+
+<div class="extra">
+			<div class="main">
+			<!--==============================header=================================-->
+				<header>
+				<div class="indent">
+				<div class="row-top">
+				<div class="wrapper">
+				<h1><a href="Accueil.jsp">Syst√®me Agora</a></h1>
+				<strong class="support">+1 959-456-7856</strong>
+				</div>
+				</div>
+				<nav>
+				<ul class="menu">
+				<li><a class="active" href="Accueil.jsp">Acceuil</a></li>
+				<li><a href="Accueil.jsp">Mes travaux Attribu√©</a></li>
+				<li><a href="Accueil.jsp">Etat de mes travaux</a></li>
+				<li><a href="Accueil.jsp">Mes factures</a></li>
+				<li><a href="Accueil.jsp">Se deconnecter</a></li>
+				</ul>
+				</nav>
+				</div>
+				</header>
+
 
 <div id="header">
 	<font size=100 face="gabriola" style="text-align:center;"> Connexion Ouvrier </font>	
@@ -57,7 +96,7 @@ function verif(f)
                 <input type="text"  name="nom" value="${sessionScope.sessNom }" size="20" maxlength="60" />
                 <br />
                 
-                <label for="prenom">PrÈnom <span class="requis"></span></label>
+                <label for="prenom">Pr√©nom <span class="requis"></span></label>
                 <input type="text" name="prenom" value="${sessionScope.sessPrenom }" size="20" maxlength="60"  />
                 <br />
                 
@@ -65,7 +104,7 @@ function verif(f)
                 <input type="text" name="prix" value="${sessionScope.sessPrix }" size="20" maxlength="60"  />
                 <br />
                 
-                  <label for="disponibilite">DisponibilitÈ <span class="requis"></span></label>
+                  <label for="disponibilite">Disponibilit√© <span class="requis"></span></label>
                 <input type="date" name="disponibilite" value="${sessionScope.sessDispo }"   />
                   <br />
                   
@@ -75,11 +114,11 @@ function verif(f)
 				<td class="label">Prestation <div class="important"></div></td>
 				<td class="field">
 				<select name="prestation" id="prestation" class="prestation" onblur="verif(this)">
-				<option value="Travaux divers, rÈnovation, amÈnagement">Travaux divers, rÈnovation, amÈnagement</option>
+				<option value="Travaux divers, r√©novation, am√©nagement">Travaux divers, r√©novation, am√©nagement</option>
 				<option value="Construction, agrandissement">Construction, agrandissement</option>
-				<option value="RÈnovation totale, tous corps d'Ètat">RÈnovation totale, tous corps d'Ètat</option>
-				<option value="Diagnostics du b‚timent">Diagnostics du b‚timent</option>
-				<option value="ExtÈrieur, voirie, jardin">ExtÈrieur, voirie, jardin</option>
+				<option value="R√©novation totale, tous corps d'√©tat">R√©novation totale, tous corps d'√©tat</option>
+				<option value="Diagnostics du b√¢timent">Diagnostics du b√¢timent</option>
+				<option value="Ext√©rieur, voirie, jardin">Ext√©rieur, voirie, jardin</option>
 				</select>
 				</td>
 				</tr>
@@ -112,7 +151,7 @@ function verif(f)
 			<th>Prenom</th>
 			<th>Login</th>
 			<th>Password</th>
-			<th>DisponibilitÈ</th>
+			<th>Disponibilit√©</th>
 			<th>Prestation</th>
 			<th>Prix</th>
 		</tr>

@@ -6,6 +6,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script src="bgMax.min.js" type="text/javascript"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
 		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
 		<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen">
@@ -91,11 +92,7 @@ function verif(f)
 
 <tr>
 <td colspan="2">     
-           
-
-<h4 class="heading"><div>Travaux à réaliser</div></h4>
-
-
+<h4 class="heading"><div>Travaux a realiser</div></h4>
 </td>
 </tr>
 

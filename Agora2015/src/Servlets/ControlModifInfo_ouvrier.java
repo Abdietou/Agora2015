@@ -59,7 +59,7 @@ public class ControlModifInfo_ouvrier extends HttpServlet {
 				HttpSession session = request.getSession();
 				try {
 				
-				String nom = request.getParameter("id");
+				String nom = request.getParameter("nom");
 				String prenom = request.getParameter("prenom");
 				String login = request.getParameter("login");
 				String password = request.getParameter("password");

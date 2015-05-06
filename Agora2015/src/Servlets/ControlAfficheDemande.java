@@ -21,6 +21,13 @@ public class ControlAfficheDemande extends HttpServlet {
 	
 	private IAgentAdminEntity agent;
 	
+	 /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ControlAfficheDemande() {
+    	agent = new AgentAdminImpl();
+    }
+	
 	@Override
 	public void init() throws ServletException {
 		agent = new AgentAdminImpl();

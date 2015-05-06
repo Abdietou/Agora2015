@@ -49,7 +49,7 @@ public class ControleurInscriptionClient extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		req.getRequestDispatcher("formulaire_inscription_client.jsp").forward(req, resp);
+		req.getRequestDispatcher("Accueil.jsp").forward(req, resp);
 	}
 	
 	

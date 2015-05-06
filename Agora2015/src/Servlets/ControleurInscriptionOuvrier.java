@@ -22,11 +22,17 @@ import metier.IOuvrierInscription;
 public class ControleurInscriptionOuvrier extends HttpServlet {
 	
 	private IOuvrierInscription ouvrier;
+	
+	@Override
+	public void init() throws ServletException {
+		ouvrier = new OuvrierInscriptionImpl();
+	}
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		req.getParameter("formulaire_inscription_ouvrier.jsp");
+		req.getRequestDispatcher("Accueil.jsp").forward(req, resp);
 	}
 
 	@Override
@@ -65,12 +71,5 @@ public class ControleurInscriptionOuvrier extends HttpServlet {
 		}
 		doGet(req, resp);
 	}
-
-	@Override
-	public void init() throws ServletException {
-		ouvrier = new OuvrierInscriptionImpl();
-	}
-	
-	
 
 }

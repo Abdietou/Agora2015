@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -31,7 +31,7 @@
 				<div class="indent">
 				<div class="row-top">
 				<div class="wrapper">
-				<h1><a href="Accueil.jsp">Système Agora</a></h1>
+				<h1><a href="Accueil.jsp">SystÃ¨me Agora</a></h1>
 				<strong class="support">+1 959-456-7856</strong>
 				</div>
 				</div>
@@ -66,7 +66,7 @@
 
 <table align="center" cellspacing=0 cellpadding=0 > 
 <tr><font size=5 face=gabriola color=white>INFORMATIONS</font></tr>
-<tr>><h5>Connectez-vous pour accéder à votre compte</h5><br></tr>
+<tr>><h5>Connectez-vous pour accÃ©der Ã  votre compte</h5><br></tr>
 
 <tr>
 <td><h6>id:&nbsp </h6></td>
